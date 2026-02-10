@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <canvas id="canavs"></canvas>
+   <canvas id="square"></canvas>
+    <script>
+        var cnv=document.getElementById("canavs")
+        // console.log(cnv);
+        var ctx=cnv.getContext('2d')
+        ctx.fillStyle='red';
+        // left,top,right,bottom
+        ctx.fillRect(0,0,130,70);
+       
+        ctx.stroke();
+
+        var sq=document.getElementById('square');
+        var ctx=sq.getContext('2d');
+        ctx.fillStyle='green';
+        ctx.fillRect(50,50,150,150);
+        ctx.stroke();
+    </script>
+</body>
+
+    </script>
+</body>
+</html>

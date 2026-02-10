@@ -6,8 +6,73 @@
     <title>html-5 Project Lab </title>
 </head>
 <body>
+    <!-- Video Tag -->
+    <h1>Video tag with loop, muted and autoplay</h1>
     <video width="100%" controls loop muted autoplay src="/html/Assignment/file_example_MP4_1280_10MG.mp4"></video> <br>
+
+    <!-- Audio Tag -->
+    <h1>Audio Tag</h1>
     <audio controls loop autoplay src="/html/Assignment/file_example_MP3_1MG.mp3"></audio> <br>
-    <canvas></canvas>
+
+    <!-- Different shape using canvas -->
+    <h1>Square Shape with help of Canvas</h1>
+    <canvas id="Square" width="200" height="200"></canvas>
+
+    <h1>Rectangle Shape with help of Canvas</h1>
+    <canvas id="Rectangle" width="200" height="200"></canvas>
+
+    <h1>Circle Shape with help of Canvas</h1>
+    <canvas id="Circle" width="200" height="200"></canvas>
+
+    <h1>Triangle Shape with help of Canvas</h1>
+    <canvas id="Triangle" width="200" height="200"></canvas>
+
+    <script>
+        // square
+        var sq=document.getElementById('Square').getContext('2d')
+        sq.fillStyle='green'
+        sq.rect(50,50,150,150)
+        sq.fill()
+
+        // Rectangle
+        var rc = document.getElementById('Rectangle').getContext('2d')
+        rc.fillStyle ="red"
+        rc.rect(50,50,150,100)
+        rc.fill()
+
+        // Circle
+        var cr = document.getElementById('Circle').getContext('2d')
+        cr.fillStyle ="blue"
+        cr.arc(100, 100, 50, 0, 2 * Math.PI)
+        cr.fill()
+
+        // Triangle
+        var tri = document.getElementById('Triangle').getContext('2d')
+        tri.fillStyle ="orange"
+
+        tri.beginPath()
+        tri.moveTo(50,50)
+        tri.lineTo(50,250)
+        tri.lineTo(250,250)
+        tri.fill()
+    </script>
+
+    <!-- Different Shapes using svg -->
+    <h1>Circle with help of svg</h1>
+    <svg width="200" height="200">
+        <circle cx="60" cy="60" r="50" fill="black">
+    </svg>
+
+    <!-- Rectangle -->
+     <h1>Rectangle with help of svg</h1>
+    <svg width="200" height="200">
+        <rect width="150" height="100" fill="aqua">
+    </svg>
+
+    <!-- Ellipse -->
+     <h1>Ellipse with help of svg</h1>
+    <svg width="300" height="300">
+        <Ellipse cx="150" cy="100" rx="100" ry="50" fill="gray">
+    </svg>
 </body>
 </html>
