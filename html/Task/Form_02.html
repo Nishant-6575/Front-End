@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center" cellpadding="10" style="background:linear-gradient(aqua,purple);">
+        <caption><h2>Student Registration Form Using Table in HTML</h2></caption>
+        <form action="">
+            <tr>
+                <td><label for="">First name</label></td>
+                <td><input type="text" pattern="[a-zA-Z]{3,50}" required></td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Last name</label></td>
+                <td><input type="text" pattern="[a-zA-Z]{3,50}" required></td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Email ID</label></td>
+                <td><input type="text" pattern="[a-zA-Z0-9@.]{3,50}" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Mobile Number</label></td>
+                <td><input type="tel" pattern="[6-9][0-9]{9}" maxlength="10" required></td>
+                <td>(10 Digits Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Gender</label></td>
+                <td>
+                    <input type="radio" name="g">Male
+                    <input type="radio" name="g">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Date of Birth (DOB)</label></td>
+                <td>
+                    <select name="" id="" required>
+                        <option value="" disabled>Day</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                    </select>
+                    <select name="" id="" required>
+                        <option value="" disabled>Month</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                    </select>
+                    <select name="" id="" required>
+                        <option value="" disabled>Year</option>
+                        <option value="">2025</option>
+                        <option value="">2026</option>
+                        <option value="">2027</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Address</label></td>
+                <td>
+                    <textarea name="" id="" rows="10" cols="40"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">City</label></td>
+                <td><input type="text" pattern="[a-zA-Z]{3,50}" required></td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Pin Code</label></td>
+                <td><input type="tel" pattern="[0-9]{6}" maxlength="6" required></td>
+                <td>(Max 6 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">State</label></td>
+                <td><input type="text" pattern="[a-zA-Z]{3,50}" required></td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Country</label></td>
+                <td><input type="text" pattern="[a-zA-Z]{3,50}" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Hobbies</label></td>
+                <td>
+                    <input type="checkbox">Drawing
+                    <input type="checkbox">Singing
+                    <input type="checkbox">Dancing
+                    <input type="checkbox">Sketching <br>
+                    <input type="checkbox">Others
+                    <input type="text" pattern="[a-zA-Z]{3,50}" placeholder="Ex- Teaching">
+                </td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Qualification</label></td>
+                <td>
+                    <input type="checkbox">High School(10th) <br>
+                    <input type="checkbox">Higher School(12th) <br>
+                    <input type="checkbox">Graduation(Bachelors) <br>
+                    <input type="checkbox">Post Graduation(Masters) <br>
+                    <input type="checkbox">Phd
+                </td>
+                <td>(Max 50 Characters Allowed)</td>
+            </tr>
+            <tr>
+                <td><label for="">Courses <br> Applied For</label></td>
+                <td>
+                    <input type="radio" name="c">BCA (Bachelor of Computer Applications) <br>
+                    <input type="radio" name="c">B.Com (Bachelor of Commerce) <br>
+                    <input type="radio" name="c">B.Sc (Bachelor of Science) <br>
+                    <input type="radio" name="c">BA (Bachelor of Arts) <br>
+                    <input type="radio" name="c">MCA (Master of Computer Applications) <br>
+                    <input type="radio" name="c">M.com (Master of Commerce) <br>
+                    <input type="radio" name="c">M.Sc (Master of Science) <br>
+                    <input type="radio" name="c">MA (Master of Arts) <br>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
