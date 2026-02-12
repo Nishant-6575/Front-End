@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center">
+        <caption><h2>Sign Up</h2></caption>
+        <form action="">
+            <tr>
+                <td><label for="">First, Last Name*:</label></td>
+                <td><input type="text" required></td>
+                <td><input type="text" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Organization:</label></td>
+                <td colspan="2"><input type="text" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Email Address*:</label></td>
+                <td colspan="2"><input type="email" pattern="[a-zA-Z0-9.-_]{3,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Work Phone:</label></td>
+                <td colspan="2"><input type="tel" pattern="[6-9][0-9]{9}" maxlength="10" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">House Phone:</label></td>
+                <td colspan="2"><input type="tel" pattern="[6-9][0-9]{9}" maxlength="10" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Cell Phone:</label></td>
+                <td colspan="2"><input type="tel" pattern="[6-9][0-9]{9}" maxlength="10" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Fax:</label></td>
+                <td colspan="2"><input type="tel" pattern="[6-9][0-9]{9}" maxlength="10" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Address 1*:</label></td>
+                <td colspan="2"><input type="text" style="width: 120%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="">addresss 2:</label></td>
+                <td colspan="2"><input type="text" style="width: 120%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">City*:</label></td>
+                <td colspan="2"><input type="text" pattern="[a-zA-Z]" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="">State/Provience:</label></td>
+                <td colspan="2"><input type="text" pattern="[a-zA-Z]" style="width: 100%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Zip/Postal Code:</label></td>
+                <td colspan="2"><input type="tel" pattern="[0-9]{6}" maxlength="6" style="width: 50%;"></td>
+            </tr>
+            <tr>
+                <td><label for="">Country*:</label></td>
+                <td colspan="2"><input type="text" pattern="[a-zA-Z]" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="">*-Required fields</label></td>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
