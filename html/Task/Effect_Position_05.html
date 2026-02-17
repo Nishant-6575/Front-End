@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #li1{
+        display: inline-block;
+        background-color: lightblue;
+        padding: 20px 40px;
+        position: relative;
+    }
+    #li1 .box{
+        height: 6px;
+        width: 100%;
+        background: black;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        transform: scaleX(0);
+        transition: 0.5s;
+    }
+    #li1:hover .box{
+        transform: scaleX(1);
+    }
+    #li1 .box1{
+        height: 6px;
+        width: 0%;
+        background: black;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        
+        transition: 0.5s;
+    }
+    #li1:hover .box1{
+        width: 100%;
+    }
+    #li1 .box2{
+        height: 6px;
+        width: 0%;
+        background: black;
+        position: absolute;
+        top: 0%;
+        left: 100%;
+        transition: 0.5s;
+    }
+    #li1:hover .box2{
+        width: 100%;
+        left: 0%;
+    }
+</style>
+<body>
+   <ul>
+        <li id="li1">Home <div class="box"></div></li>
+        <li id="li1">About<div class="box"></div></li>
+        <li id="li1">Contact<div class="box"></div></li>
+   </ul><br>
+   <ul>
+        <li id="li1">Home <div class="box1"></div></li>
+        <li id="li1">About<div class="box1"></div></li>
+        <li id="li1">Contact<div class="box1"></div></li>
+   </ul><br>
+   <ul>
+        <li id="li1">Home <div class="box1"></div><div class="box2"></div></li>
+        <li id="li1">About<div class="box1"></div><div class="box2"></div></li>
+        <li id="li1">Contact<div class="box1"></div><div class="box2"></div></li>
+   </ul>
+</body>
+</html>
