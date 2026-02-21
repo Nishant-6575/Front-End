@@ -3,13 +3,20 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #537942;
+    /* background-color: #537942; */
 }
 
 /* Reused */
-.container {
+
+.container1, .container2{
     width: 90%;
     margin: 0px auto;
+}
+#head{
+    background-image: linear-gradient(229deg, rgba(124,178,88,0.9999999999999999) 0%, rgba(76,84,73,0) 100%);
+}
+#head .container2 *{
+    /* background-image: linear-gradient(229deg, rgba(124,178,88,0.9999999999999999) 0%, rgba(76,84,73,0) 100%); */
 }
 .nav {
     padding: 10px 0px;
@@ -41,5 +48,44 @@
 .icon-serach{
     color: white;
 }
-
+#head .row{
+    display: flex;
+    margin-top: 8px;
+}
+#head .row .col{
+    width: 50%;
+}
+.head-txt {
+    font-size: 62px;
+    letter-spacing: -1px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Berkshire Swash";
+    text-align: center;
+}
 /* Header End */
+
+/* Body start */
+
+.section1{
+    display: flex;
+    justify-content: end;
+}
+.section1 .box{
+    background-color: black;
+    width: 90%;
+    padding: 20px 0px;
+}
+.section1 .row{
+    display: flex;
+}
+.section1 .row .col1{
+    /* border-radius: 50% 0% 0% 50%; */
+    background-color: #c6c6c6;
+    padding-right: 5%;
+}
+.section1 .row .col2{
+    background-color:#e6ca48;
+    width: 100%;
+}
+/* Body End */
