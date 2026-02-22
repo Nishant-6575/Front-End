@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{
+            text-align: left;
+        }
+        #sub{
+            width: 100%;
+        }
+        #submit{
+            background-color: rgb(245, 199, 199);
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+       <table align="center" cellpadding="10px">
+         <caption><h1>Assignment Form</h1></caption>
+            <tr>
+                <th>
+                    <label for="full-name" pattern="[a-zA-Z]{3,20}">Full Name</label>
+                </th>
+                <td>
+                    <input type="text" id="full-name" required>
+                </td>
+                <td>
+                    (Min 3 and Max 20 character allowed)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="Email">Email</label>
+                </th>
+                <td>
+                    <input type="email" id="Email" pattern="[a-zA-Z0-9.-_]{3,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="phone">Phone Number</label>
+                </th>
+                <td>
+                    <input type="tel" id="phone" pattern="[6-9][0-9]{9}" maxlength="10" required>
+                </td>
+                <td>
+                    (Only 10 digit allowed)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="">Subject</label>
+                </th>
+                <td>
+                    <select name="" id="sub" required>
+                        <option value="" disabled selected>Select Subject</option>
+                        <option value="">Maths</option>
+                        <option value="">Science</option>
+                        <option value="">Phy</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="msg">Message</label>
+                </th>
+                <td>
+                    <textarea name="" id="msg" rows="5" cols="20" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" id="submit">
+                </td>
+            </tr>
+       </table>
+
+    </form>
+</body>
+</html>
