@@ -1,0 +1,22 @@
+@media only screen and (max-width:1160px) {}
+
+@media only screen and (max-width:992px) {}
+
+@media only screen and (max-width:768px) {
+    .menu-card {
+        width: 100%;
+    }
+
+    .menu-data .menu-row {
+        padding: 10px;
+    }
+
+    .menu-card .menu-col {
+        padding: 20px;
+    }
+.menu-data {
+    width: 100%;
+}
+}
+
+@media only screen and (max-width:576px) {}
