@@ -1,0 +1,27 @@
+#tbl, caption {
+    background-color: lightskyblue;
+}
+caption{
+    color: blue;
+}
+th {
+    text-align: left;
+}
+
+.lbl {
+    padding: 10px;
+    margin: 10px;
+}
+
+#submit {
+    background-color: lightgoldenrodyellow;
+    width: 100px;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+#submit:hover {
+    scale: 1.2;
+    transition: 0.5s;
+}
