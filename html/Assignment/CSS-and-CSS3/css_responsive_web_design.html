@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #head {
+            background-color: rgb(255, 213, 213);
+            padding: 10px 0px;
+
+        }
+
+        h4 {
+            text-align: center;
+            display: none;
+        }
+
+        .nav {
+            width: 90%;
+            margin: 0px auto;
+            background-color: rgb(255, 213, 213);
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        .list {
+            list-style-type: none;
+            margin: 0px 10px;
+            font-size: clamp(16px, 2.3vw, 28px);
+            /* font-size: 30px; */
+        }
+
+        .row {
+            display: flex;
+            margin: 20px 0px;
+        }
+
+        .col {
+            height: 200px;
+            border: 2px solid;
+            width: 50%;
+            text-align: center;
+        }
+
+        #footer {
+            background-color: rgb(191, 228, 227);
+            padding: 20px 0px;
+            font-size: clamp(16px, 2.3vw, 28px);
+            text-align: center;
+        }
+
+        @media only screen and (max-width:768px) {
+            h4 {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .col {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <h4>Menu</h4>
+        <div class="nav">
+            <ul>
+                <li class="list">Home</li>
+                <li class="list">About</li>
+                <li class="list">Product</li>
+                <li class="list">Contact</li>
+            </ul>
+        </div>
+    </header>
+    <div id="main">
+        <div class="row">
+            <div class="col">Column 1</div>
+            <div class="col">Column 2</div>
+        </div>
+    </div>
+    <footer id="footer">
+        <p>This is footer</p>
+    </footer>
+</body>
+
+</html>

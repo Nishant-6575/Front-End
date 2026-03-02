@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #main{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 30px;
+            margin: 10px;
+        }
+        .card{
+            text-align: center;
+            /* border: 2px solid rgba(255, 255, 255, 0.602); */
+            border-radius: 15px;
+            box-shadow: 2px 5px 3px lightgray;
+            display: grid;
+            grid-template-rows: 8fr 1fr;
+        }
+        .img{
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        img{
+            width: 100%;
+            border-radius: 15px;
+        }
+        h3{
+            font-size: clamp(16px, 2.5vw, 30px)
+        }
+        p{
+            font-size: clamp(12px,  1.8vw, 22px);
+            margin-top: 5px;
+        }
+        .card:hover{
+            scale: 1.1;
+            transition: 0.5s;
+            box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.529);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_01.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Perfume</h3>
+                </div>
+                <div class="price">
+                    <p>Price:299</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_02.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Perfume</h3>
+                </div>
+                <div class="price">
+                    <p>Price:399</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_03.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Watch</h3>
+                </div>
+                <div class="price">
+                    <p>Price:19,999</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_04.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Speaker</h3>
+                </div>
+                <div class="price">
+                    <p>Price:2999</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_05.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Shoes</h3>
+                </div>
+                <div class="price">
+                    <p>Price:999</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_06.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Playstation</h3>
+                </div>
+                <div class="price">
+                    <p>Price:51,999</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_07.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Mouse</h3>
+                </div>
+                <div class="price">
+                    <p>Price:499</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_08.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Bottel</h3>
+                </div>
+                <div class="price">
+                    <p>Price:149</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="/html/Assignment/CSS-and-CSS3/img/Product_09.jpg" alt="No image">
+            </div>
+            <div class="data">
+                <div class="title">
+                    <h3>Cold Drink</h3>
+                </div>
+                <div class="price">
+                    <p>Price:99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

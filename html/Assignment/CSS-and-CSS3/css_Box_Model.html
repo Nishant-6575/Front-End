@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-        .card{
+        .card {
             width: 25%;
             margin: 100px auto;
             text-align: center;
@@ -14,10 +15,12 @@
             border-radius: 25px;
             padding-bottom: 20px;
         }
-        .name{
+
+        .name {
             padding: 10px;
         }
-        .btn{
+
+        .btn {
             width: 50%;
             background-color: rgb(41, 36, 182);
             color: white;
@@ -27,28 +30,30 @@
             margin-top: 5px;
         }
 
-        .c-bx{
+        .c-bx {
             height: 200px;
             width: 200px;
             border: 5px solid black;
             margin: 10px auto;
             padding: 10px;
+            text-align: center;
         }
-        .b-bx{
+
+        .b-bx {
             height: 200px;
             width: 200px;
             border: 5px solid black;
             margin: 10px auto;
             box-sizing: border-box;
             padding: 10px;
+            text-align: center;
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="card">
-        <div class="img"><img src="/html/Assignment/CSS-and-CSS3/Profile.png" alt="No Image"></div>
+        <div class="img"><img src="/html/Assignment/CSS-and-CSS3/img/Profile.png" alt="No Image"></div>
         <div class="info">
             <div class="name">Nishant</div>
             <div class="bio">Information about person</div>
@@ -56,8 +61,14 @@
         <button class="btn">Follow</button>
     </div>
 
-    <div class="c-bx">Content with 200px width (Content-box)</div>
+    <div class="c-bx">Content with 200px width (Content-box)
+        <p>Now actual width of this box becomen= 200px width + 5px border + 10px margin + 10px padding =225px</p>
+    </div>
     <br>
-    <div class="b-bx">content with 200px width (Border-box)</div>
+    <div class="b-bx">content with 200px width (Border-box)
+        <p>In this condition box width remain 200px. But content width became 175px</p>
+    </div>
+
 </body>
+
 </html>
