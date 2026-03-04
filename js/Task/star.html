@@ -7,9 +7,67 @@
 </head> 
 <body>
     <script>
+       
+       for(let r=1;r<=10;r++){
+            for(let c=1;c<=10;c++){
+                document.writeln("*")
+            }
+            document.writeln("<br>")
+        }
+
+        document.writeln("2nd<br>")
+
+        for(let r=1;r<=10;r++){
+            for(let c=1;c<=(10-r);c++){
+                document.writeln("&nbsp;&nbsp;")
+            }
+            for(let x=1;x<=r;x++){
+                document.writeln("*")
+            }
+            document.writeln("<br>")
+        }
+
+        document.writeln("3rd<br>")
+
         for(let r=1;r<=10;r++){
             for(let c=1;c<=r;c++){
                 document.writeln("*")
+            }
+            document.writeln("<br>")
+        }
+
+        document.writeln("4th<br>")
+
+        for(let r=1;r<=10;r++){
+            for(let c=r;c<=10;c++){
+                document.writeln("*")
+            }
+            document.writeln("<br>")
+        }
+
+        document.writeln("5th<br>")
+
+        for(let r=1;r<=10;r++){
+            for(let c=1;c<=(r-1);c++){
+                document.writeln("&nbsp;&nbsp")
+            }
+            for (let y=10;y>=r;y--) {
+                 document.writeln("*")
+            }
+            document.writeln("<br>")
+        }
+
+        document.writeln("6th<br>")
+
+        for(let r=1;r<=9;r++){
+            for(let c=1;c<=(9-r);c++){
+                document.writeln("&nbsp;&nbsp")
+            }
+            for (let y=1;y<=((2*r)-1);y++) {
+                 document.writeln("*")
+            }
+            for(let c=1;c<=(9-r);c++){
+                document.writeln("&nbsp;&nbsp")
             }
             document.writeln("<br>")
         }
