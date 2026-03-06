@@ -1,42 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main {
+            background-color: rgb(39, 36, 36);
+            width: 300px;
+            margin: 80px auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        input {
+            width: 100%;
+            font-size: 30px;
+            padding: 10px 0px;
+            text-align: right;
+            border-radius: 20px;
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            padding-top: 20px;
+        }
+
+        button {
+            height: 70px;
+            width: 70px;
+            font-size: 40px;
+            border-radius: 50%;
+            border: 0px;
+            color: white;
+            margin: 0px auto;
+            background-color: rgb(72, 72, 72);
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .spl {
+            background-color: rgb(255, 149, 0);
+        }
+
+        .spl:hover {
+            background-color: rgba(255, 149, 0, 0.9);
+        }
+
+        .btn0 {
+            grid-column: 2;
+        }
+
+        .btnc {
+            grid-column: 3;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- <textarea name="" id="txtarea" cols="20" rows="2"></textarea> -->
-     <input type="text" id="txtin">
-    <button onclick="bt('0')">0</button>
-    <button onclick="bt('1')">1</button>
-    <button onclick="bt('2')">2</button>
-    <button onclick="bt('3')">3</button>
-    <button onclick="bt('4')">4</button>
-    <button onclick="bt('5')">5</button>
-    <button onclick="bt('6')">6</button>
-    <button onclick="bt('7')">7</button>
-    <button onclick="bt('8')">8</button>
-    <button onclick="bt('9')">9</button>
-    <button onclick="bt('.')">.</button>
-    <button onclick="bt('+')">+</button>
-    <button onclick="bt('-')">-</button>
-    <button onclick="bt('*')">*</button>
-    <button onclick="bt('/')">/</button>
-    <button onclick="cal()">=</button>
-    <button onclick="clr()">C</button>
-    
+    <div class="main">
+        <input type="text" id="txtin" readonly>
+        <div class="btn">
+
+            <button onclick="clr()" class="btnc">C</button>
+            <button onclick="bt('/')" class="spl">/</button>
+
+            <button onclick="bt('7')">7</button>
+            <button onclick="bt('8')">8</button>
+            <button onclick="bt('9')">9</button>
+
+            <button onclick="bt('*')" class="spl">x</button>
+
+            <button onclick="bt('4')">4</button>
+            <button onclick="bt('5')">5</button>
+            <button onclick="bt('6')">6</button>
+
+            <button onclick="bt('-')" class="spl">-</button>
+
+            <button onclick="bt('1')">1</button>
+            <button onclick="bt('2')">2</button>
+            <button onclick="bt('3')">3</button>
+
+            <button onclick="bt('+')" class="spl">+</button>
+
+            <button onclick="bt('0')" class="btn0">0</button>
+
+            <button onclick="bt('.')">.</button>
+
+            <button onclick="cal()" class="spl">=</button>
+        </div>
+    </div>
     <script>
-        function bt(input){
+        function bt(input) {
             txtin.value += input
         }
         function cal() {
             txtin.value = eval(txtin.value);
         }
-        function clr(){
+        function clr() {
             txtin.value = ""
         }
     </script>
 
 </body>
+
 </html>
