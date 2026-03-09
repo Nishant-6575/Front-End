@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            background-color: rgba(255, 155, 155, 0.426);
+            width: 500px;
+            margin: 100px auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1{
+            text-align: center;
+            padding: 5px 0px;
+            color: rgb(255, 96, 96);
+        }
+        .row {
+            display: flex;
+            padding: 5px 0px;
+        }
+
+        .head {
+            width: 30%;
+            font-weight: 600;
+            color: rgb(159, 42, 42);
+        }
+
+        .inp {
+            width: 50%;
+        }
+
+        input {
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            height: 25px;
+            box-shadow: 2px 2px 5px rgba(255, 0, 0, 0.536);
+        }
+
+        .er {
+            text-align: left;
+            padding: 0px 8px;
+            color: red;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin: 20px 0px;    
+        }
+        button{
+            width: 20%;
+            box-shadow: 5px 5px 10px rgba(248, 98, 98, 0.657);
+            border: none;
+            font-size: 20px;
+            padding: 5px;
+            background-color: rgba(255, 155, 155, 0.662);
+            border-radius: 10px;
+            color: rgb(145, 2, 2);
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        button:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1>Submit Form</h1>
+        </div>
+        <form action="">
+            <div class="row">
+                <div class="head">
+                    <label for="">First Name:</label>
+                </div>
+                <div class="inp">
+                    <input type="text" name="f_name" id="fname">
+                </div>
+                <div class="er">
+                    <span id="ferr"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="head">
+                    <label for="">Last Name:</label>
+                </div>
+                <div class="inp">
+                    <input type="text" name="l_name" id="lname">
+                </div>
+                <div class="er">
+                    <span id="lerr">
+                </div>
+            </div>
+            <div class="row">
+                <div class="head">
+                    <label for="">Address:</label>
+                </div>
+                <div class="inp">
+                    <input type="text" name="adr_name" id="adr">
+                </div>
+                <div class="er">
+                    <span id="adrerr">
+                </div>
+            </div>
+            <div class="row">
+                <div class="head">
+                    <label for="">Mobile No:</label>
+                </div>
+                <div class="inp">
+                    <input type="tel" name="mob_name" id="mob" maxlength="10">
+                </div>
+                <div class="er">
+                    <span id="moberr">
+                </div>
+            </div>
+            <div class="row">
+                <div class="head">
+                    <label for="">Email ID:</label>
+                </div>
+                <div class="inp">
+                    <input type="email" name="mail_name" id="mail">
+                </div>
+                <div class="er">
+                    <span id="mailerr">
+                </div>
+            </div>
+            <div class="row">
+                <div class="head">
+                    <label for="">Password</label>
+                </div>
+                <div class="inp">
+                    <input type="text" name="passw_name" id="passw">
+                </div>
+                <div class="er">
+                    <span id="passwerr">
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit" onclick="return validation()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validation() {
+
+            // Check first name error
+            let fname = document.getElementById("fname").value;
+            let reg_ex_name = /^[a-zA-Z]*$/
+
+            if (fname == "" || fname == null) {
+                document.getElementById("ferr").innerHTML = "Enter First Name"
+                document.getElementById("fname").style.border = "2px solid red"
+            } else {
+                if (reg_ex_name.test(fname)) {
+                    document.getElementById("ferr").innerHTML = ""
+                } else {
+                    document.getElementById("ferr").innerHTML = "Number not allowed in First Name"
+                    document.getElementById("fname").style.border = "2px solid red"
+                }
+            }
+
+            // Check last name error
+            let lname = document.getElementById("lname").value;
+
+            if (lname == "" || lname == null) {
+                document.getElementById("lerr").innerHTML = "Enter Last Name"
+                document.getElementById("lname").style.border = "2px solid red"
+            } else {
+                if (reg_ex_name.test(lname)) {
+                    document.getElementById("lerr").innerHTML = ""
+                } else {
+                    document.getElementById("lerr").innerHTML = "Number not allowed in Last Name"
+                    document.getElementById("lname").style.border = "2px solid red"
+                }
+            }
+
+            // Check Address error
+            let adr = document.getElementById("adr").value;
+            
+            if (adr == "" || adr == null){
+                document.getElementById("adrerr").innerHTML = "Enter Address"
+                document.getElementById("adr").style.border = "2px solid red"
+            }else{
+                document.getElementById("adrerr").innerHTML = ""
+            }
+
+            // Check Mobile no error
+            let mob = document.getElementById("mob").value;
+            let reg_ex_mob = /^[0-9]*$/
+
+            if (mob == "" || mob == null){
+                document.getElementById("moberr").innerHTML = "Enter Mobile No"
+                document.getElementById("mob").style.border = "2px solid red"
+            }else{
+                if (reg_ex_mob.test(mob)) {
+                    if(mob.length < 10){
+                        document.getElementById("moberr").innerHTML = "Enter valid number";
+                    } else{
+                        document.getElementById("moberr").innerHTML = "";
+                    }
+                } else {
+                document.getElementById("moberr").innerHTML = "Alphabet not allowed";
+                document.getElementById("mob").style.border = "2px solid red"
+                }
+            }
+
+            // Check Email error
+            let mail = document.getElementById("mail").value;
+            let reg_ex_mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+            if (mail == "" || mail == null) {
+                document.getElementById("mailerr").innerHTML = "Enter Email"
+                document.getElementById("mail").style.border = "2px solid red"
+            } else {
+                if (reg_ex_mail.test(mail)) {
+                    document.getElementById("mailerr").innerHTML = ""
+                } else {
+                    document.getElementById("mailerr").innerHTML = "Enter valid email address"
+                    document.getElementById("mail").style.border = "2px solid red"
+                }
+            }
+            
+            // Check Password error
+            let passw = document.getElementById("passw").value;
+            let reg_ex_passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,12}$/
+
+            if (passw == "" || passw == null) {
+                document.getElementById("passwerr").innerHTML = "Enter Password"
+                document.getElementById("passw").style.border = "2px solid red"
+            } else {
+                if (reg_ex_passw.test(passw)) {
+                    document.getElementById("passwerr").innerHTML = ""
+                } else {
+                    document.getElementById("passwerr").innerHTML = "Enter valid Password"
+                    document.getElementById("passw").style.border = "2px solid red"
+                }
+            }
+
+            // confirm error before form submission
+            if (document.getElementById("ferr").innerHTML != "") {
+                return false
+            } else if (document.getElementById("lerr").innerHTML != ""){
+                return false
+            } else if (document.getElementById("adrerr").innerHTML != ""){
+                return false
+            }else if (document.getElementById("moberr").innerHTML != ""){
+                return false
+            } else if (document.getElementById("mailerr").innerHTML != ""){
+                return false
+            } else if (document.getElementById("passwerr").innerHTML != ""){
+                return false
+            }
+
+        }
+    </script>
+</body>
+
+</html>
