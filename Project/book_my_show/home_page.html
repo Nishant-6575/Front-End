@@ -16,7 +16,7 @@
             margin: 0px;
             padding: 0px;
         } */
-        div {
+        * {
             font-family: roboto;
         }
 
@@ -32,9 +32,9 @@
 
 <body>
     <!-- header start -->
-    <nav class="navbar mt-2">
+    <nav class="navbar my-2">
         <div class="container">
-            <div class="container-fluid d-inline-flex">
+            <div class="container-fluid d-inline-flex p-0">
                 <a class="navbar-brand" href="#">
                     <img src="/img/BMS_logo_new.png" alt="" style="width: 120px;">
                 </a>
@@ -53,8 +53,8 @@
                     <option value="">Pune</option>
                     <option value="">Banglore</option>
                 </select>
-                <button class="btn btn-danger shadow mx-1" style="width: 130px;">Sign in</button>
-                <button class="navbar-toggler border-0 ms-1" type="button" data-bs-toggle="collapse"
+                <button class="btn btn-danger shadow mx-1 text-nowrap" style="width: 130px;">Sign in</button>
+                <button class="navbar-toggler border-0 ms-1 pe-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -63,5 +63,256 @@
         </div>
     </nav>
     <!-- header end -->
+    <!-- navbar_full start -->
+    <nav class="navbar bg-dark bg-opacity-10 shadow-sm">
+        <div class="container">
+            <div>
+                <ul class="nav">
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Movies</li>
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Stream</li>
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Evwnts</li>
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Plays</li>
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Sports</li>
+                    <li class="nav-item mx-1 pe-lg-2 text-muted">Activities</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="nav">
+                    <li class="nav-item mx-1 ps-lg-2 text-muted">ListYourShow</li>
+                    <li class="nav-item mx-1 ps-lg-2 text-muted">Corporates</li>
+                    <li class="nav-item mx-1 ps-lg-2 text-muted">Offers</li>
+                    <li class="nav-item mx-1 ps-lg-2 text-muted">Gift Cards</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar_full end -->
+    <!-- carousel start -->
+    <div id="carouselExampleControls" class="carousel slide my-3" data-bs-ride="carousel">
+        <div class="carousel-inner px-lg-5">
+            <div class="carousel-item active">
+                <div class="mx-auto" style="max-width:1000px;">
+                    <img src="/img/banner01.jpeg" class="d-block w-100" alt="banner01">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="mx-auto" style="max-width:1000px;">
+                    <img src="/img/banner02.jpeg" class="d-block w-100" alt="banner02">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="mx-auto" style="max-width:1000px;">
+                    <img src="/img/banner03.jpeg" class="d-block w-100" alt="banner03">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="mx-auto" style="max-width:1000px;">
+                    <img src="/img/banner04.jpeg" class="d-block w-100" alt="banner04">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0"
+                class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="3"></button>
+        </div>
+    </div>
+    <!-- carousel end -->
+    <!-- recommended movie start -->
+    <div class="container-lg my-5">
+        <div class="navbar p-0 m-0">
+            <div class="nav">
+                <p class="h4 m-0">Recommended Movies</p>
+            </div>
+            <div class="nav">
+                <a href="" class="text-danger nav-link p-0">See All ></a>
+            </div>
+        </div>
+        <div class="d-flex overflow-auto gap-3 gap-lg-5 bg-info">
+            <div class="card flex-shrink-0 w-auto border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="..."
+                    style="max-width: 200px;">
+                <div class="card-body">
+                    <p class="card-title h5">The Kerala Story 2: Goes Beyond</p>
+                    <p class="card-text"><small class="text-muted">Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Dhurandhar The Revenge</p>
+                    <p class="card-text"><small class="text-muted">Action/Thriller</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">O' Romeo</p>
+                    <p class="card-text"><small class="text-muted">Action/Romantic/Thriller</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Behadd</p>
+                    <p class="card-text"><small class="text-muted">Drama</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Dhurandhar</p>
+                    <p class="card-text"><small class="text-muted">Action/Thriller</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Dhurandhar</p>
+                    <p class="card-text"><small class="text-muted">Action/Thriller</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Dhurandhar</p>
+                    <p class="card-text"><small class="text-muted">Action/Thriller</small></p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 border-0" style="max-width: 200px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" class="card-img-top rounded-3" alt="...">
+                <div class="card-body">
+                    <p class="card-title h5">Dhurandhar</p>
+                    <p class="card-text"><small class="text-muted">Action/Thriller</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- recommended movie end -->
+
+    <div class="container-lg p-0">
+        <div class="navbar p-0 m-0">
+            <div class="nav">
+                <p class="h4 m-0">Recommended Movies</p>
+            </div>
+            <div class="nav">
+                <a href="" class="text-danger nav-link p-0">See All ></a>
+            </div>
+        </div>
+        <div class="d-flex gap-3 justify-content-between">
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small class="">Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-lg p-0">
+        <div class="navbar p-0 m-0">
+            <div class="nav">
+                <p class="h4 m-0">Recommended Movies</p>
+            </div>
+            <div class="nav">
+                <a href="" class="text-danger nav-link p-0">See All ></a>
+            </div>
+        </div>
+        <div class="d-flex gap-3 overflow-auto justify-content-between">
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small class="">Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+            <div class="card border-0" style="max-width: 240px;">
+                <img src="/img/et00484171-pnlwfbvpnj-portrait.jpg.jpeg" alt="" class="card-img rounded-3">
+                <div class="card-body px-1">
+                    <p class="card-title h5"><small>The Kerala Story 2: Goes Beyond</small></p>
+                    <p class="card-text text-muted"><small>Drama/Social</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
 </body>
+
 </html>
