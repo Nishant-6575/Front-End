@@ -40,7 +40,8 @@
                 </a>
                 <form action="" class="d-flex w-100">
                     <!-- <div class="container-fluid navbar-nav"> -->
-                    <input class="form-control" type="" placeholder=" Search" aria-label="" />
+                    <input class="form-control text-muted" type=""
+                        placeholder=" Search for Movies, Events, Plays, Sports and Activities" aria-label="" data-bs-toggle="modal" data-bs-target="#searchmodal"/>
                     <!-- </div> -->
                 </form>
                 <select name="" id="" class="form-select border-0 mx-1" style="width: 300px;">
@@ -62,6 +63,26 @@
             </div>
         </div>
     </nav>
+
+    <!-- search Modal start -->
+    <div class="modal modal-dialog modal-fullscreen" id="searchmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog"> Dialog
+            <div class="modal-content"> content
+                <div class="modal-header">header
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">body
+                    ...
+                </div>
+                <div class="modal-footer">footer
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search Modal end -->
     <!-- header end -->
     <!-- navbar_full start -->
     <nav class="navbar bg-dark bg-opacity-10 shadow-sm">
