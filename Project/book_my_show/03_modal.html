@@ -11,25 +11,6 @@
 </head>
 
 <body>
-    <div class="modal" id="demo" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">content
-                <div class="modal-header">header
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#demo">
@@ -41,10 +22,14 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content"> conttent
-                <div class="modal-header"> header
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex align-items-center w-100 bg-info">
+                        <div class="w-25"></div>
+                        <input type="text" class="form-control w-50">
+                        <button type="button" class="btn-close w-25 bg-danger text-right" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body">body
                     ...
@@ -57,7 +42,43 @@
         </div>
     </div>
 
-    <div class="modal-dialog modal-fullscreen">
+
+    <input type="text" class="form-control" data-bs-toggle="modal" data-bs-target="#Modal2">
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header px-0">
+                    <div class="row w-100 align-items-center m-0">
+                        <div class="col-3 col-lg-4">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="text" class="form-control rounded-pill" name="" id="">
+                        </div>
+                        <div class="col-3 col-lg-4">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn-close m-0"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="d-flex align-items-center w-100 bg-info">
+                        <div class="w-25"></div>
+                        <input type="text" class="form-control w-50">
+                        <button type="button" class="btn-close w-25 bg-danger text-right" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div> -->
+                </div>
+                <div class="modal-body">body
+                    ...
+                </div>
+                <div class="modal-footer">footer
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
