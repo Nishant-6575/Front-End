@@ -13,7 +13,7 @@
             constructor() {
                 this.bankbalance = 1000
             }
-            newuser(pin, balance) {
+            newuser(pin) {
                 let bankname = "HDFC"
                 let bankIFSC = "HDFC001"
                 let bankpin = pin
@@ -43,7 +43,7 @@
         }
 
         const nishant = new Bank
-        nishant.newuser(123, 1000)
+        nishant.newuser(123)
         nishant.deposit(1000)
         nishant.withdrawal(20)
     </script>
