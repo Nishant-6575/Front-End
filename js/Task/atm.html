@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Bank {
+            constructor() {
+                this.bankbalance = 1000
+            }
+            newuser(pin, balance) {
+                let bankname = "HDFC"
+                let bankIFSC = "HDFC001"
+                let bankpin = pin
+
+                console.log("Bnak Name: ", bankname)
+                console.log("Bnak IFSC: ", bankIFSC)
+                console.log("Bnak PIN: ", bankpin)
+                console.log("Bnak Balance: ", this.bankbalance)
+            }
+            deposit(i) {
+                this.bankbalance += i
+
+                console.log(`Balance: ${this.bankbalance}`)
+                // console.log(pin)
+            }
+            withdrawal(j) {
+                if (j > this.bankbalance) {
+                    console.log("Insufficient balance")
+                    console.log(`You have Balance: ${this.bankbalance}`)
+                } else {
+                    this.bankbalance -= j
+
+                    console.log(`Balance: ${this.bankbalance}`)
+                }
+
+            }
+        }
+
+        const nishant = new Bank
+        nishant.newuser(123, 1000)
+        nishant.deposit(1000)
+        nishant.withdrawal(20)
+    </script>
+</body>
+
+</html>
