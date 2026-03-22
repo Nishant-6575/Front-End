@@ -24,12 +24,9 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="d-flex align-items-center w-100 bg-info">
-                        <div class="w-25"></div>
-                        <input type="text" class="form-control w-50">
-                        <button type="button" class="btn-close w-25 bg-danger text-right" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
+                    <input type="text" class="form-control">
+                    <button type="button" class="btn-close bg-danger text-right" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">body
                     ...
@@ -58,8 +55,8 @@
                         </div>
                         <div class="col-3 col-lg-4">
                             <div class="d-flex justify-content-end">
-                                <button type="button" class="btn-close m-0"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
@@ -69,6 +66,47 @@
                         <button type="button" class="btn-close w-25 bg-danger text-right" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div> -->
+                </div>
+                <div class="modal-body">body
+                    ...
+                </div>
+                <div class="modal-footer">footer
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="text" class="form-control" data-bs-toggle="modal" data-bs-target="#modal3">
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close bg-danger text-right" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close bg-info text-right" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">body
+                                    ...
+                                </div>
+                                <div class="modal-footer">footer
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-body">body
                     ...
