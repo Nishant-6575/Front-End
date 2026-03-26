@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"hiran",
+        "age":23,
+        "course":"front-end"
+    },
+    {
+        "id":2,
+        "name":"jigar",
+        "age":25,
+        "course":"back-end"
+    },
+    {
+        "id":3,
+        "name":"ketan",
+        "age":27,
+        "course":"full-stack"
+    },
+    {
+        "id":4,
+        "name":"badal",
+        "age":22,
+        "course":"front-end"
+    }
+]

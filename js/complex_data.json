@@ -1,0 +1,67 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "hiran",
+            "age": 23,
+            "course": "front-end"
+        },
+        {
+            "id": 2,
+            "name": "jigar",
+            "age": 25,
+            "course": "back-end"
+        },
+        {
+            "id": 3,
+            "name": "ketan",
+            "age": 27,
+            "course": "full-stack"
+        },
+        {
+            "id": 4,
+            "name": "badal",
+            "age": 22,
+            "course": "front-end"
+        }
+    ],
+    "admin":[
+        {
+            "id": 1,
+            "name": "admin",
+            "age": 23
+        },
+         {
+            "id": 2,
+            "name": "admin2",
+            "age": 25
+        }
+    ],
+    "product":[
+        {
+            "name": "phone",
+            "price": 19999,
+            "condition": "new"
+        },
+        {
+            "name": "bag",
+            "price": 999,
+            "condition": "new"
+        },
+        {
+            "name": "earphone",
+            "price": 299,
+            "condition": "used"
+        },
+        {
+            "name": "shoes",
+            "price": 1999,
+            "condition": "new"
+        },
+        {
+            "name": "cloth",
+            "price": 799,
+            "condition": "new"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fetch("complex_data.json", {
+            method: "GET"
+        })
+            .then((data) => {
+                return data.json()
+            })
+            .then((data) => {
+                // console.log(data)
+                for (const key in data) {
+                    // const element = object[key];
+                    console.log(key)
+                    document.writeln(`<h1> Key name in object : ${key}</h1>`)
+                    if (key == "users") {
+                        data.users.forEach(user => {
+                            console.log(user)
+                            document.writeln(`<h2>id : ${user.id}, name : ${user.name}, age : ${user.age}, course : ${user.course}</h2>`)
+                        });
+                    }
+                    if (key == "admin") {
+                        data.admin.forEach(user => {
+                            console.log(user)
+                            document.writeln(`<h2>id : ${user.id}, name : ${user.name}, age : ${user.age}</h2>`)
+                        });
+                    }
+                    if (key == "product") {
+                        data.product.forEach(user => {
+                            console.log(user)
+                            document.writeln(`<h2>Product Name : ${user.name}, Price : ${user.price}, Condition : ${user.condition}</h2>`)
+                        });
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>

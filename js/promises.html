@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function output(res) {
+            console.log(res)
+        }
+
+        let data = new Promise((res, rej) => {
+            let x = 10
+            if (x == 10) {
+                res("sucess")
+            } else {
+                rej("no value")
+            }
+            console.log(x)
+        })
+            .then((res) => {
+                output(res)
+            })
+            .catch((err) => {
+                output(err)
+            })
+            .finally(() => {
+                console.log("promise process completed")
+            })
+
+        console.log(data)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch("sample_data.json",{
+            method:"GET"
+        })
+
+        .then((received_data)=>{
+            console.log(received_data)
+            return received_data.json()
+        })
+        .then((received_data)=>{
+            console.log(received_data)
+            // received_data.forEach(user => {
+            //     console.log(user.name)
+            //     document.writeln(`<h2>id : ${user.id} name : ${user.name}</h2>`)
+            // });
+        })
+    </script>
+</body>
+</html>
