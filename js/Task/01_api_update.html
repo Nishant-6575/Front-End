@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        let newuser = {
+            firtsname : "Nisahnt",
+            lastname: "Patel",
+            age : 30,
+        }
+
+        const updatedata = async ()=>{
+            try {
+                const res = await axios.post("https://69cccbc6ddc3cabb7bd18f74.mockapi.io/user",newuser)
+                console.log(res.data)
+            } catch (error) {
+                console.log("error",error)
+            }
+        }
+        // updatedata()
+
+    </script>
+</body>
+</html>
