@@ -1,7 +1,9 @@
 // import demo1 from "./demo";
 import React from "react";
 // import Classcompo from "./Classcompo";
-import Props from "./Props/Props";
+// import Props from "./Props/Props";
+// import Formdata from "./formHadling/Formdata";
+import FormObj from "./formHadling/FormObj";
 
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
       <h2>This is h2 tag</h2> */}
       {/* <Classcompo/> */}
       {/* <demo1/> */}
-      <Props home={"Home"} aboutus={"About Us"} contactus={"Contact Us"}/>
+      {/* <Props home={"Home"} aboutus={"About Us"} contactus={"Contact Us"}/> */}
+      {/* <Formdata /> */}
+      <FormObj />
     </div>
   );
 }
