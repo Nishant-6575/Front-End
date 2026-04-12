@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loops (For, While, Do-While)</h1>
+    <h2>Please open consol for task result</h2>
+
+    <script>
+        for (let i = 1; i <= 10; i++) {
+            console.log(`i : ${i}`)
+        }
+
+        // while loop
+
+        let j = 1
+        let sum = 0
+
+        while (j <= 10) {
+            if (j % 2 === 0) {
+                sum += j
+            }
+            j++;
+        }
+        console.log(`sum of even number from 1 to 20 : ${sum}`)
+
+        // do-while loop
+
+        let k
+
+        do {
+            k = parseInt(prompt("Please enter number grater than 10"))
+            console.log("inserted valid number")
+        } while (k <= 10);
+
+    </script>
+</body>
+
+</html>
