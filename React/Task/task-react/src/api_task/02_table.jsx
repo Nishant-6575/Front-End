@@ -36,7 +36,7 @@ export default function Table_02() {
                     <tbody>
                         {
                             user && user.map((data, index) => {
-                                const {id,firstName,lastName,phone,company} = data
+                                const { id, firstName, lastName, phone, company } = data
                                 return (
                                     <tr key={index}>
                                         <th scope="row">{id}</th>

@@ -4,8 +4,10 @@ import React from "react";
 // import Props from "./Props/Props";
 // import Formdata from "./formHadling/Formdata";
 // import FormObj from "./formHadling/FormObj";
-import Table from "./api_task/01_table";
-import Table_02 from "./api_task/02_table";
+// import Table from "./api_task/01_table";
+// import Table_02 from "./api_task/02_table";
+// import Card_03 from "./api_task/03_crad";
+import Card_04 from "./api_task/04_card";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       {/* <Formdata /> */}
       {/* <FormObj /> */}
       {/* <Table/> */}
-      <Table_02/>
+      {/* <Table_02/> */}
+      {/* <Card_03/> */}
+      <Card_04/>
     </div>
   );
 }
