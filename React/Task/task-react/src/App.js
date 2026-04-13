@@ -3,8 +3,9 @@ import React from "react";
 // import Classcompo from "./Classcompo";
 // import Props from "./Props/Props";
 // import Formdata from "./formHadling/Formdata";
-import FormObj from "./formHadling/FormObj";
-
+// import FormObj from "./formHadling/FormObj";
+import Table from "./api_task/01_table";
+import Table_02 from "./api_task/02_table";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       {/* <demo1/> */}
       {/* <Props home={"Home"} aboutus={"About Us"} contactus={"Contact Us"}/> */}
       {/* <Formdata /> */}
-      <FormObj />
+      {/* <FormObj /> */}
+      {/* <Table/> */}
+      <Table_02/>
     </div>
   );
 }

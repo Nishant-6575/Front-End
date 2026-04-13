@@ -21,7 +21,6 @@ function FormObj() {
 
     return (
         <div>
-
             <h1>Hello this form hadling object </h1>
             <div className="container">
                 <div className="row">
