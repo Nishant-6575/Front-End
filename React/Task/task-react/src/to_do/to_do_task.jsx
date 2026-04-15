@@ -6,17 +6,36 @@ export default function To_do() {
         surname: ""
     })
 
-    const [saveinp, setsaveinp] = useState([])
-    const[errordata,seterrordata] = useState("")
+    const [listinp, setlistinp] = useState([])
+    const [errordata, seterrordata] = useState("")
+    const [listindex, setlistindex] = useState(null)
+
+    console.log(listindex)
 
     function updateinp() {
-        if (inp.name.trim() === ""){
+        if (inp.name.trim() == "") {
             console.error("Empty input box error");
             seterrordata("Please fill input box to add your name")
-           return
+            setlistindex(null)
+            return
         }
-        setsaveinp([...saveinp, inp.name])
-        setinp({name:""})
+        if (listindex != null) {
+            // console.log("index is here")
+
+            listinp[listindex] = inp.name
+            setlistinp([
+                ...listinp
+            ])
+            setinp({ name: "" })
+            setlistindex(null)
+
+            // console.log(listinp)
+
+        } else {
+            setlistinp([...listinp, inp.name])
+            setinp({ name: "" })
+        }
+
 
     }
 
@@ -28,35 +47,46 @@ export default function To_do() {
         seterrordata("")
     }
 
-    function deleteindex(index){
-        setsaveinp(saveinp.filter((_,i)=> i !== index))
+    function deleteindex(index) {
+        setlistinp(listinp.filter((_, i) => i !== index))
     }
 
-    // deleteindex(2)
-    console.log(saveinp[2])
-
-    // console.log(inp)
-    console.log(saveinp)
+    function update(index) {
+        // console.log(index)
+        // console.log(listinp[index])
+        setlistindex(index)
+        setinp({
+            ...setinp,
+            name: listinp[index]
+        })
+    }
 
     return (
         <div>
-            <h1>add your name</h1>
+            <div className='container m-5'>
+            <h1>Add your name here</h1>
             <input type="text" value={inp.name} name='name' onChange={updatetext} />
-            <button className='btn btn-primary ms-5' onClick={updateinp}>add</button>
+            <button className='btn btn-primary ms-5' onClick={updateinp}>Add/Update</button>
             {errordata && <h5 className='text-danger'>{errordata}</h5>}
-            {/* <button className='btn btn-primary ms-5' onClick={deleteindex}>add</button> */}
-            <div>
-                <h1>Here is input saved:</h1>
-                {
-                    saveinp.map((data, index) => {
-                        return (
-                            <div key={index} className='d-flex m-2'>
-                                <h4>{data}</h4>
-                                <button className='btn btn-secondary ms-3' onClick={()=>{deleteindex(index)}}>Delete</button>
-                            </div>
-                        )
-                    })
-                }
+            </div>
+            <div className='container'>
+                <table className="table table-borderless" style={{maxWidth:500}}>
+                    <tbody>
+                        {
+                            listinp.map((data, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{data}</td>
+                                        <td><button className='btn btn-danger ms-3' onClick={() => { deleteindex(index) }}>Delete</button></td>
+                                        <td><button className='btn btn-success ms-3' onClick={() => { update(index) }} >Edit</button></td>
+
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+
             </div>
         </div>
     )
