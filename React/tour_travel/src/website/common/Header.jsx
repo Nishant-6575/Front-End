@@ -53,7 +53,7 @@ function Header() {
                                             Blog
                                         </a>
                                         <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
-                                            <li><a className="dropdown-item" href="blog.html"> Blog</a></li>
+                                            <li><NavLink className="dropdown-item" to="/blog"> Blog</NavLink></li>
                                             <li><a className="dropdown-item border-0" href="blog_detail.html"> Blog Detail</a></li>
                                         </ul>
                                     </li>

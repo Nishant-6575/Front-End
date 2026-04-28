@@ -7,7 +7,7 @@ function About() {
     return (
         <div>
             <Header />
-            <NavTitle />
+            <NavTitle title = "About Us"/>
             <div>
                 <section id="disc" className="p_3 px-3 bg-light">
                     <div className="container-fluid">
