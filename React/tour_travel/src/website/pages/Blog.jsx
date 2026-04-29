@@ -10,18 +10,6 @@ export default function Blog() {
             <NavTitle title="Blog"/>
             <div>
                 <div>
-                    {/* <section id="center" className="center_blog">
-                        <div className="center_om bg_back">
-                            <div className="container-xl">
-                                <div className="row center_o1 text-center">
-                                    <div className="col-md-12">
-                                        <h1 className="text-white">Our Blog</h1>
-                                        <h6 className="col_green mb-0 mt-3 fw-normal"><a className="text-light" href="#">Home</a> <span className="mx-2 text-white-50">/</span> Our Blog</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
                     <section id="blog_h" className="p_3 px-3">
                         <div className="container-fluid">
                             <div className="blog_h1 row">

@@ -3,6 +3,13 @@ import Home from './website/pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from './website/pages/About'
 import Blog from './website/pages/Blog'
+import BlogsData from './website/pages/BlogsData'
+import Contact from './website/pages/Contact'
+import Package from './website/pages/Package'
+import PackageData from './website/pages/PackageData'
+import Price from './website/pages/Price'
+import Services from './website/pages/Services'
+import NotFound from './website/pages/NotFound'
 
 function App() {
   return (
@@ -12,6 +19,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blogdata' element={<BlogsData />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/package' element={<Package />} />
+        <Route path='/packagedata' element={<PackageData />} />
+        <Route path='/price' element={<Price />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
     </BrowserRouter>

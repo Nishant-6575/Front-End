@@ -1,0 +1,51 @@
+{
+    "admin": [
+        {
+            "id": 1,
+            "name": "admin",
+            "email": "admin@gmail.com",
+            "password": "123456"
+        },
+        {
+            "id": 2,
+            "name": "subadmin",
+            "email": "subadmin@gmail.com",
+            "password": "123456"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "user",
+            "email": "user@gmail.com",
+            "password": "123456",
+            "status": "unblock"
+        }
+    ],
+    "package": [
+        {
+            "id": 1,
+            "name": "Dolor Porta",
+            "loaction": "Thailand",
+            "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
+            "days": 3,
+            "img": "https://media.istockphoto.com/id/2164152889/photo/tourists-and-locals-enjoying-yaowarats-street-food.jpg?s=612x612&w=0&k=20&c=FGe6bKaxRhR0DJLbGHuHmAGYx2I4VBm9J-MJ-aowi9o="
+        },
+        {
+            "id": 2,
+            "name": "tokyo",
+            "loaction": "japan",
+            "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
+            "days": 6,
+            "img": "https://media.istockphoto.com/id/1149107495/photo/yasaka-pagoda-in-gion-at-sunset-kyoto-japan.jpg?s=612x612&w=0&k=20&c=HqmJ6Yf1Agac5kjebFDuEx3tP6JWzdfK35dFlqHZ_PE="
+        },
+        {
+            "id": 3,
+            "name": "Safari World Bangkok",
+            "loaction": "Bangkok",
+            "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
+            "days": 4,
+            "img": "https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_Bangkok_1_l_658_1200.jpg"
+        }
+    ]
+}

@@ -3,7 +3,7 @@ import Header from '../common/Header'
 import NavTitle from '../common/NavTitle'
 import Footer from '../common/Footer'
 
-function About() {
+export default function About() {
     return (
         <div>
             <Header />
@@ -237,5 +237,3 @@ function About() {
         </div>
     )
 }
-
-export default About
