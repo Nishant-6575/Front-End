@@ -85,7 +85,7 @@ export default function Services() {
                         <div className="about_pg2 row mt-4 text-center">
                             <div className="col-md-4">
                                 <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-bus" /></span>
+                                    <span className="font_60 col_green"><i className="fa-cc" /></span>
                                     <h5 className="mt-3">Airline Tickets</h5>
                                     <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
                                 </div>

@@ -10,6 +10,8 @@ import PackageData from './website/pages/PackageData'
 import Price from './website/pages/Price'
 import Services from './website/pages/Services'
 import NotFound from './website/pages/NotFound'
+import Dashboard from './Admin/Apages/Dashboard'
+import PackManage from './Admin/Apages/PackManage'
 
 function App() {
   return (
@@ -25,7 +27,12 @@ function App() {
         <Route path='/packagedata' element={<PackageData />} />
         <Route path='/price' element={<Price />} />
         <Route path='/services' element={<Services />} />
+
         <Route path='*' element={<NotFound />} />
+
+        {/* admin */}
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/packagemanage' element={<PackManage />} />
       </Routes>
     </div>
     </BrowserRouter>
