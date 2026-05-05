@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Aheader from '../Acommon/Aheader'
-import axios from 'axios'
+import useApi from '../../Custom/useapi'
 
 export default function PackManage() {
-    const [pkg, setpkg] = useState([])
 
-    useEffect(() => {
-        fetchdata()
-    }, [])
-    const fetchdata = async () => {
-        const res = await axios.get("http://localhost:3000/package")
-        setpkg(res.data)
-    }
+    const {api} = useApi("http://localhost:3000/package")
+    
     return (
         <div>
             <Aheader />
@@ -29,7 +23,7 @@ export default function PackManage() {
                     </thead>
                     <tbody>
                         {
-                            pkg && pkg.map((data, key) => {
+                            api && api.map((data, key) => {
                                 return (
                                     <tr key={key}>
                                         <th scope="row">{data.id}</th>

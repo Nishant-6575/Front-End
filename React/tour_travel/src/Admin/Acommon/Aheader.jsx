@@ -17,29 +17,17 @@ export default function Aheader() {
                                     <li className="nav-item">
                                         <NavLink className="nav-link " aria-current="page" to="/dashboard" >Dashboard</NavLink>
                                     </li>
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link" to="/packagemanage">Package </NavLink>
-                                    </li>
-                                    <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Blog
-                                        </a>
-                                        <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
-                                            <li><NavLink className="dropdown-item" to="/blog"> Blog</NavLink></li>
-                                            <li><NavLink className="dropdown-item border-0" to="/blogdata"> Blog Detail</NavLink></li>
-                                        </ul>
-                                    </li>
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Package
                                         </a>
                                         <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
-                                            <li><NavLink className="dropdown-item" to="/package"> Package</NavLink></li>
-                                            <li><NavLink className="dropdown-item border-0" to="/packagedata"> Package Detail</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/packagemanage"> Package Manage</NavLink></li>
+                                            <li><NavLink className="dropdown-item border-0" to="/packadd"> Package Add</NavLink></li>
                                         </ul>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/services">Services </NavLink>
+                                        <NavLink className="nav-link" to="/sermanage">Services Manage </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/price">Pricing </NavLink>

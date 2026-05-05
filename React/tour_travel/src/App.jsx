@@ -12,6 +12,8 @@ import Services from './website/pages/Services'
 import NotFound from './website/pages/NotFound'
 import Dashboard from './Admin/Apages/Dashboard'
 import PackManage from './Admin/Apages/PackManage'
+import ServiceManage from './Admin/Apages/ServiceManage'
+import PackAdd from './Admin/Apages/PackAdd'
 
 function App() {
   return (
@@ -33,6 +35,11 @@ function App() {
         {/* admin */}
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/packagemanage' element={<PackManage />} />
+        <Route path='/sermanage' element={<ServiceManage />} />
+
+        <Route path='/packadd' element={<PackAdd />} />
+
+
       </Routes>
     </div>
     </BrowserRouter>

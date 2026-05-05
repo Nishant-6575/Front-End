@@ -239,7 +239,7 @@ export default function Package() {
                                                                 <div className="col-md-6 col-6">
                                                                     <div className="desti3im2ir text-end">
                                                                         <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
-                                                                            $ 498</h4>
+                                                                            ${data.price}</h4>
                                                                     </div>
                                                                 </div>
                                                             </div>
