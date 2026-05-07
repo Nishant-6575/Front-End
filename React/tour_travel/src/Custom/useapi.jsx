@@ -13,5 +13,5 @@ export default function useApi(apilink) {
         setapi(res.data)
     }
 
-    return {api}
+    return {api,fetchdata}
 }

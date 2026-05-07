@@ -51,31 +51,13 @@
       "img": "https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_Bangkok_1_l_658_1200.jpg"
     },
     {
-      "id": "HxR_zBOgR0k",
-      "name": "Beach Vacation",
-      "loaction": "Diu",
-      "desc": "Meals: Most packages offer breakfast; some include dinner as well.Transfers: Air-conditioned vehicles for all sightseeing and airport/railway station pickups.Expert Guides: Some tours include a driver who doubles as a local guide with knowledge of historical sites.",
-      "days": "5",
-      "price": "450",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIrqMQqRvTaF7O5mwrINwBD9JW3miTwRONw&s"
-    },
-    {
-      "id": "x7FoGB3zSiE",
-      "name": "New Vacation",
-      "loaction": "Anywere",
-      "desc": "Book the best Daman Diu Tour Package at ₹18000 for 5 Days / 4 Nights. Explore beaches, forts, and water sports. Perfect for couples, families, and adventure",
-      "days": "4",
-      "price": "150",
-      "img": "https://imgcld.yatra.com/ytimages/image/upload/v1433315432/Domestic%20Holidays/Havelock_2.jpg"
-    },
-    {
-      "id": "hDhb4AyjBIs",
+      "id": "eCLgdJAH22Q",
       "name": "custom",
-      "loaction": "hook",
-      "desc": "Here is the data which is going to update",
-      "days": "6",
-      "price": "789",
-      "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0b/97/98/7a.jpg"
+      "loaction": "Anywere",
+      "desc": "Dummy Data",
+      "days": "4",
+      "price": "450",
+      "img": "https://imgcld.yatra.com/ytimages/image/upload/v1433315432/Domestic%20Holidays/Havelock_2.jpg"
     }
   ],
   "service": [
