@@ -5,7 +5,6 @@ import Aheader from '../Acommon/Aheader'
 export default function ServiceManage() {
 
     const { api } = useApi("http://localhost:3000/service")
-
     return (
         <div>
             <Aheader />

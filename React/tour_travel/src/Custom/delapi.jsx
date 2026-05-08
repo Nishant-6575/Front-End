@@ -8,7 +8,6 @@ export default function useDelApi(url,fetchdata) {
           try {
               const res = await axios.delete(`${url}/${id}`)
               fetchdata()
-              alert("Data Deleted")
           } catch (error) {
               console.log("Api data not Found", error)
           }

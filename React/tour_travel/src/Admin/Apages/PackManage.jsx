@@ -3,14 +3,67 @@ import Aheader from '../Acommon/Aheader'
 import useApi from '../../Custom/useapi'
 import axios from 'axios'
 import useDelApi from '../../Custom/delapi'
+import { toast } from 'react-toastify'
+import UseEditApi from '../../Custom/editapi'
 
 export default function PackManage() {
 
+    // custom hook for get api data
     const { api, fetchdata } = useApi("http://localhost:3000/package")
 
     const [view, setview] = useState()
 
+    // custom hook for delete data in api
     const { del } = useDelApi("http://localhost:3000/package", fetchdata)
+
+    // custom hook for update data in api
+    const { getid, edit, UpdateApi, getedit } = UseEditApi({
+        id: "",
+        name: "",
+        loaction: "",
+        desc: "",
+        days: "",
+        price: "",
+        img: "",
+    }, "http://localhost:3000/package", fetchdata)
+
+
+
+    // Basic Method to update data in api
+
+    // const getid = async (id) => {
+    //     const res = await axios.get(`http://localhost:3000/package/${id}`)
+    //     setedit(res.data)
+    // }
+
+    // const [edit, setedit] = useState({
+    //     id: "",
+    //     name: "",
+    //     loaction: "",
+    //     desc: "",
+    //     days: "",
+    //     price: "",
+    //     img: "",
+    // })
+
+    // const getedit = (e) => {
+    //     setedit({
+    //         ...edit,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
+
+    // const UpdateApi = async (e)=>{
+    //      e.preventDefault();
+    //     try {
+    //         const res= await axios.put(`http://localhost:3000/package/${edit.id}`,edit)
+    //         fetchdata()
+    //         toast.success("Package Updated Successfully")
+    //     } catch (error) {
+    //         console.log("API Not Found",error)
+    //     }
+    // }
+
 
     return (
         <div>
@@ -38,14 +91,13 @@ export default function PackManage() {
                                         <td><img src={data.img} alt="No Image Avilable" style={{ width: "100px" }} /></td>
                                         <td>
                                             <button className='btn btn-info rounded-pill' data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => setview(data)}>View</button>
-                                            <button className='btn btn-success mx-2 rounded-pill'>Edit</button>
+                                            <button className='btn btn-success mx-2 rounded-pill' data-bs-toggle="modal" data-bs-target="#update-status-modal" onClick={() => getid(data.id)}>Edit</button>
                                             <button className='btn btn-danger rounded-pill' onClick={() => del(data.id)}>Delete</button>
                                         </td>
                                     </tr>
                                 )
                             })
                         }
-
                     </tbody>
                 </table>
                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -118,7 +170,72 @@ export default function PackManage() {
                     </div>
                 </div>
 
+                <div className="modal fade" id="update-status-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered modal-xl">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h1 className="modal-title fs-2" id="staticBackdropLabel">Update Package</h1>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                            </div>
+                            <div className="modal-body">
+                                {
+                                    edit && (
+                                        <div className="mx-auto">
+                                            <div className="contact_2l">
+                                                <form action="">
+                                                    <div className="blog_dt1ib3i row">
+                                                        <div className="col-md-6">
+                                                            <div className="blog_dt1ib3il">
+                                                                <input placeholder="Name" value={edit.name} onChange={getedit} name='name' className="form-control border-0 bg-light" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-6">
+                                                            <div className="blog_dt1ib3il">
+                                                                <input placeholder="Loaction" value={edit.loaction} onChange={getedit} name='loaction' className="form-control border-0 bg-light" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="blog_dt1ib3i row mt-4">
+                                                        <div className="col-md-6">
+                                                            <div className="blog_dt1ib3il">
+                                                                <input placeholder="Enter your Days" value={edit.days} onChange={getedit} name='days' className="form-control border-0 bg-light" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-6">
+                                                            <div className="blog_dt1ib3il">
+                                                                <input placeholder="Enter your Price" value={edit.price} onChange={getedit} name='price' className="form-control border-0 bg-light" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="blog_dt1ib3i row mt-4">
+                                                        <div className="col-md-12">
+                                                            <div className="blog_dt1ib3il">
+                                                                <input placeholder="Enter your Images" name='img' value={edit.img} onChange={getedit} className="form-control border-0 bg-light" type="url" />
+                                                                <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="blog_dt1ib3i row mt-4">
+                                                        <div className="col-md-12">
+                                                            <div className="blog_dt1ib3il">
+                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" defaultValue={""} />
 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary btn-success" data-bs-dismiss="modal" onClick={UpdateApi}>Update</button>
+                                <button type="button" className="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

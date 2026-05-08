@@ -14,34 +14,48 @@ import Dashboard from './Admin/Apages/Dashboard'
 import PackManage from './Admin/Apages/PackManage'
 import ServiceManage from './Admin/Apages/ServiceManage'
 import PackAdd from './Admin/Apages/PackAdd'
+import { Bounce, ToastContainer } from 'react-toastify'
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/blogdata' element={<BlogsData />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/package' element={<Package />} />
-        <Route path='/packagedata' element={<PackageData />} />
-        <Route path='/price' element={<Price />} />
-        <Route path='/services' element={<Services />} />
+      <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/blogdata' element={<BlogsData />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/package' element={<Package />} />
+          <Route path='/packagedata' element={<PackageData />} />
+          <Route path='/price' element={<Price />} />
+          <Route path='/services' element={<Services />} />
 
-        <Route path='*' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
 
-        {/* admin */}
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/packagemanage' element={<PackManage />} />
-        <Route path='/sermanage' element={<ServiceManage />} />
+          {/* admin */}
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/packagemanage' element={<PackManage />} />
+          <Route path='/sermanage' element={<ServiceManage />} />
 
-        <Route path='/packadd' element={<PackAdd />} />
+          <Route path='/packadd' element={<PackAdd />} />
 
 
-      </Routes>
-    </div>
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }
