@@ -3,12 +3,25 @@ import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import Aheader from '../Acommon/Aheader'
 import usePostApi from '../../Custom/postapi'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function PackAdd() {
 
     // const redirect = useNavigate()
 
-    const { input, getchange, getsubmit } = usePostApi({
+    // const { input, getchange, getsubmit } = usePostApi({
+    //     id: "",
+    //     name: "",
+    //     loaction: "",
+    //     desc: "",
+    //     days: "",
+    //     price: "",
+    //     img: ""
+    // }, "http://localhost:3000/package",
+    //     "/packagemanage")
+
+    const { input, getchange, getsubmit } = useCrudApi(
+        "http://localhost:3000/package", {
         id: "",
         name: "",
         loaction: "",
@@ -16,10 +29,7 @@ export default function PackAdd() {
         days: "",
         price: "",
         img: ""
-    }, "http://localhost:3000/package",
-        "/packagemanage")
-
-
+    }, "/packmng")
     // console.log(input)
 
     // const [pack, setpack] = useState({

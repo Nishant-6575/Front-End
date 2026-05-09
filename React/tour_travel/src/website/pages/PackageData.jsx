@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function PackageData() {
+    const {getapi}=useCrudApi("http://localhost:3000/package")
+
+    const[singledata,setsingledata]=useState(null)
+    useEffect(()=>{
+        setsingledata(getapi[0])
+    })
+    
     return (
         <div>
             <Header />
@@ -17,7 +25,13 @@ export default function PackageData() {
                                     <div className="center_h1i1">
                                         <div className="grid clearfix">
                                             <figure className="effect-jazz mb-0">
-                                                <a href="#"><img src="img/1.jpg" className="w-100" alt="abc" /></a>
+                                               {
+                                                singledata && (
+                                                    <a href="#"><img src={singledata.img} className="w-100" alt="abc" /></a>
+
+                                                )
+                                               } 
+                                                
                                             </figure>
                                         </div>
                                     </div>

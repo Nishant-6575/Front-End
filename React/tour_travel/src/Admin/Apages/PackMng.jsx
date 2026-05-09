@@ -1,67 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Aheader from '../Acommon/Aheader'
-import useApi from '../../Custom/useapi'
-import axios from 'axios'
-import useDelApi from '../../Custom/delapi'
-import { toast } from 'react-toastify'
-import useEditApi from '../../Custom/editapi'
+import UseCrudApi from '../../Custom/crudApi'
 
-export default function PackManage() {
-
-    // custom hook for get api data
-    const { api, fetchdata } = useApi("http://localhost:3000/package")
+export default function PackMng() {
+    const { getapi, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/package",
+        {
+            id: "",
+            name: "",
+            loaction: "",
+            desc: "",
+            days: "",
+            price: "",
+            img: ""
+        },
+    )
 
     const [view, setview] = useState()
-
-    // custom hook for delete data in api
-    const { del } = useDelApi("http://localhost:3000/package", fetchdata)
-
-    // custom hook for update data in api
-    const { getid, edit, UpdateApi, getedit } = useEditApi({
-        id: "",
-        name: "",
-        loaction: "",
-        desc: "",
-        days: "",
-        price: "",
-        img: "",
-    }, "http://localhost:3000/package", fetchdata)
-
-
-    // Basic Method to update data in api
-
-    // const getid = async (id) => {
-    //     const res = await axios.get(`http://localhost:3000/package/${id}`)
-    //     setedit(res.data)
-    // }
-
-    // const [edit, setedit] = useState({
-    //     id: "",
-    //     name: "",
-    //     loaction: "",
-    //     desc: "",
-    //     days: "",
-    //     price: "",
-    //     img: "",
-    // })
-
-    // const getedit = (e) => {
-    //     setedit({
-    //         ...edit,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // const UpdateApi = async (e)=>{
-    //      e.preventDefault();
-    //     try {
-    //         const res= await axios.put(`http://localhost:3000/package/${edit.id}`,edit)
-    //         fetchdata()
-    //         toast.success("Package Updated Successfully")
-    //     } catch (error) {
-    //         console.log("API Not Found",error)
-    //     }
-    // }
 
 
     return (
@@ -72,7 +26,7 @@ export default function PackManage() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Sr. No</th>
                             <th scope="col">First</th>
                             <th scope="col">Last</th>
                             <th scope="col">Handle</th>
@@ -81,26 +35,26 @@ export default function PackManage() {
                     </thead>
                     <tbody>
                         {
-                            api && api.map((data, key) => {
+                            getapi && getapi.map((data, key) => {
                                 return (
-                                    <tr key={key}>
-                                        <th scope="row">{data.id}</th>
+                                    <tr key={data.id}>
+                                        <th scope="row">{key+1}</th>
                                         <td>{data.name}</td>
                                         <td>{data.loaction}</td>
                                         <td><img src={data.img} alt="No Image Avilable" style={{ width: "100px" }} /></td>
                                         <td>
                                             <button className='btn btn-info rounded-pill' data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => setview(data)}>View</button>
-                                            <button className='btn btn-success mx-2 rounded-pill' data-bs-toggle="modal" data-bs-target="#update-status-modal" onClick={() => getid(data.id)}>Edit</button>
+                                            <button className='btn btn-success mx-2 rounded-pill' data-bs-toggle="modal" data-bs-target="#update-status-modal" onClick={() => getid(data)}>Edit</button>
                                             <button className='btn btn-danger rounded-pill' onClick={() => del(data.id)}>Delete</button>
                                         </td>
                                     </tr>
                                 )
-                            })
+                            })     
                         }
                     </tbody>
                 </table>
                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-dialog modal-dialog-centered modal-lg">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h1 className="modal-title fs-5" id="staticBackdropLabel">Package</h1>

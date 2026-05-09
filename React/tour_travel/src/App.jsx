@@ -15,6 +15,7 @@ import PackManage from './Admin/Apages/PackManage'
 import ServiceManage from './Admin/Apages/ServiceManage'
 import PackAdd from './Admin/Apages/PackAdd'
 import { Bounce, ToastContainer } from 'react-toastify'
+import PackMng from './Admin/Apages/PackMng'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           {/* admin */}
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/packagemanage' element={<PackManage />} />
+          <Route path='/packmng' element={<PackMng />} />
           <Route path='/sermanage' element={<ServiceManage />} />
 
           <Route path='/packadd' element={<PackAdd />} />

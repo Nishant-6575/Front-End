@@ -22,7 +22,7 @@ export default function Aheader() {
                                             Package
                                         </a>
                                         <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
-                                            <li><NavLink className="dropdown-item" to="/packagemanage"> Package Manage</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/packmng"> Package Manage</NavLink></li>
                                             <li><NavLink className="dropdown-item border-0" to="/packadd"> Package Add</NavLink></li>
                                         </ul>
                                     </li>

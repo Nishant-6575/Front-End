@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
-export default function UseEditApi(editdata, url, fetchdata) {
+export default function useEditApi(editdata, url, fetchdata) {
     const getid = async (id) => {
         const res = await axios.get(`${url}/${id}`)
         setedit(res.data)
@@ -20,6 +20,12 @@ export default function UseEditApi(editdata, url, fetchdata) {
     const UpdateApi = async (e) => {
         e.preventDefault();
         try {
+            if (edit.days == "" || edit.desc == "" || edit.img == "" || edit.loaction == "" || edit.name == "" || edit.price == "") {
+                console.log("pls Field a Package data")
+                toast.error("pls Field a Package data")
+                return false
+            }
+
             const res = await axios.put(`${url}/${edit.id}`, edit)
             fetchdata()
             toast.success("Package Updated Successfully")
@@ -27,5 +33,5 @@ export default function UseEditApi(editdata, url, fetchdata) {
             console.log("API Not Found", error)
         }
     }
-    return { getid, edit, UpdateApi,getedit }
+    return { getid, edit, UpdateApi, getedit }
 }
