@@ -7,7 +7,7 @@ export default function PackMng() {
         {
             id: "",
             name: "",
-            loaction: "",
+            location: "",
             desc: "",
             days: "",
             price: "",
@@ -40,7 +40,7 @@ export default function PackMng() {
                                     <tr key={data.id}>
                                         <th scope="row">{key+1}</th>
                                         <td>{data.name}</td>
-                                        <td>{data.loaction}</td>
+                                        <td>{data.location}</td>
                                         <td><img src={data.img} alt="No Image Avilable" style={{ width: "100px" }} /></td>
                                         <td>
                                             <button className='btn btn-info rounded-pill' data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => setview(data)}>View</button>
@@ -93,7 +93,7 @@ export default function PackMng() {
                                                 </div>
                                                 <div className="desti3im2 shadow_box p-4">
                                                     <h5 className="mt-4 fs-4"><a href="detail.html">{view.name}</a></h5>
-                                                    <h6><i className="fa fa-map-marker me-1 col_green" /> {view.loaction}</h6>
+                                                    <h6><i className="fa fa-map-marker me-1 col_green" /> {view.location}</h6>
                                                     <hr />
                                                     <p>{view.desc}</p>
                                                     <hr />
@@ -144,7 +144,7 @@ export default function PackMng() {
                                                         </div>
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Loaction" value={edit.loaction} onChange={getedit} name='loaction' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Loaction" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                     </div>

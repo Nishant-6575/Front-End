@@ -3,17 +3,25 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
 import axios from 'axios'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 export default function Package() {
+
+    // get api
     const [pkg, setpkg] = useState([])
 
     useEffect(() => {
         fetchdata()
     }, [])
+
     const fetchdata = async () => {
         const res = await axios.get("http://localhost:3000/package")
         setpkg(res.data)
     }
+
+    // select and export clicked btn id name
+    const redirect = useNavigate()
+
     return (
         <div>
             <Header />
@@ -226,14 +234,14 @@ export default function Package() {
                                                         </div>
                                                         <div className="desti3im2 shadow_box p-4">
                                                             <h5 className="mt-4 fs-4"><a href="detail.html">{data.name}</a></h5>
-                                                            <h6><i className="fa fa-map-marker me-1 col_green" /> {data.loaction}</h6>
+                                                            <h6><i className="fa fa-map-marker me-1 col_green" /> {data.location}</h6>
                                                             <hr />
                                                             <p>{data.desc}</p>
                                                             <hr />
                                                             <div className="desti3im2i row">
                                                                 <div className="col-md-6 col-6">
                                                                     <div className="desti3im2il">
-                                                                        <h6 className="mb-0 mt-2"><a className="button" href="detail.html">Details</a></h6>
+                                                                        <h6 className="mb-0 mt-2"><button className="button btn" onClick={() => redirect("/packagedata", { state: key })}>Details</button></h6>
                                                                     </div>
                                                                 </div>
                                                                 <div className="col-md-6 col-6">

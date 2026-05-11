@@ -12,7 +12,7 @@ export default function PackAdd() {
     // const { input, getchange, getsubmit } = usePostApi({
     //     id: "",
     //     name: "",
-    //     loaction: "",
+    //     location: "",
     //     desc: "",
     //     days: "",
     //     price: "",
@@ -24,7 +24,7 @@ export default function PackAdd() {
         "http://localhost:3000/package", {
         id: "",
         name: "",
-        loaction: "",
+        location: "",
         desc: "",
         days: "",
         price: "",
@@ -88,7 +88,7 @@ export default function PackAdd() {
                             </div>
                             <div className="col-md-6">
                                 <div className="blog_dt1ib3il">
-                                    <input placeholder="Loaction" value={input.loaction} name='loaction' onChange={getchange} className="form-control border-0 bg-light" type="text" />
+                                    <input placeholder="Loaction" value={input.location} name='location' onChange={getchange} className="form-control border-0 bg-light" type="text" />
                                 </div>
                             </div>
                         </div>

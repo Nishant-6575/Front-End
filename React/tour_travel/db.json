@@ -26,7 +26,7 @@
     {
       "id": "1",
       "name": "Dolor Porta",
-      "loaction": "Thailand",
+      "location": "Thailand",
       "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
       "days": 3,
       "price": "650",
@@ -35,7 +35,7 @@
     {
       "id": "2",
       "name": "tokyo",
-      "loaction": "japan",
+      "location": "japan",
       "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
       "days": 6,
       "price": "250",
@@ -44,7 +44,7 @@
     {
       "id": "3",
       "name": "Safari World Bangkok",
-      "loaction": "Bangkok",
+      "location": "Bangkok",
       "desc": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
       "days": 4,
       "price": "250",
@@ -53,7 +53,7 @@
     {
       "id": "eCLgdJAH22Q",
       "name": "New package4",
-      "loaction": "Anywere",
+      "location": "Anywere",
       "desc": "Dummy Data",
       "days": "5",
       "price": "200",
@@ -62,7 +62,7 @@
     {
       "id": "L4_DOordjSI",
       "name": "custom2",
-      "loaction": "Thailand",
+      "location": "Thailand",
       "desc": "dummy data",
       "days": "5",
       "price": "150",
@@ -71,7 +71,7 @@
     {
       "id": "w4oMVQ638qQ",
       "name": "Dolor Porta",
-      "loaction": "japan",
+      "location": "japan",
       "desc": "Dummy Data 2",
       "days": "4",
       "price": "250",
@@ -80,7 +80,7 @@
     {
       "id": "iJPpgSz_DfA",
       "name": "custom",
-      "loaction": "Diu",
+      "location": "Diu",
       "desc": "Dummy Data 2",
       "days": "5",
       "price": "789",
@@ -89,7 +89,7 @@
     {
       "id": "nYC92mahrXc",
       "name": "custom2",
-      "loaction": "Thailand",
+      "location": "Thailand",
       "desc": "Dummy Data",
       "days": "5",
       "price": "789",
@@ -98,7 +98,7 @@
     {
       "id": "ueZt4W7y2lE",
       "name": "Diu Adventure",
-      "loaction": "Diu",
+      "location": "Diu",
       "desc": "Dummy Data",
       "days": "5",
       "price": "650",

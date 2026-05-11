@@ -1,24 +1,73 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
+import useCrudApi from '../../Custom/crudApi'
+import { data, useLocation, useNavigate } from 'react-router-dom'
 
 export default function BlogsData() {
+    const { getapi } = useCrudApi("http://localhost:3000/blog")
+
+    const [singledata, setsingledata] = useState(null)
+
+    const location = useLocation()
+
+    const id = location.state
+
+    useEffect(() => {
+        if (id == null) {
+            setsingledata(getapi[0])
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        } else {
+            setsingledata(getapi[id])
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+    }, [getapi, id])
+
+    // details btn click and move to top
+    const getkey = async (key) => {
+        setsingledata(getapi[key])
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
     return (
         <div>
             <Header />
             <NavTitle name="Blog Detail" title="Blog Detail" img="https://cdn.pixabay.com/photo/2019/03/09/21/30/downtown-4045036_1280.jpg" />
             <section id="blog_h" className="p_3 px-3">
                 <div className="container-fluid">
+                    {
+                        singledata && (
+                            <h2 className="text-center mb-4">{singledata.title}</h2>
+                        )
+                    }
                     <div className="blog_dt1 row">
                         <div className="col-md-12">
                             <div className="blog_dt1i">
                                 <div className="grid clearfix">
                                     <figure className="effect-jazz mb-0">
-                                        <a href="blog_detail.html"><img src="img/31.jpg" className="w-100" alt="abc" /></a>
+                                        {
+                                            singledata && (
+                                                <a href="blog_detail.html"><img src={singledata.img} className="w-100" alt="abc" style={{ height: 600 }} /></a>
+
+                                            )
+                                        }
                                     </figure>
                                 </div>
-                                <p className="mt-3">There are so many places to explore, so many adventures waiting for you. What makes a great travel destination? It depends on what kind of traveler you are: whether it's culture, natural beauty or history that interests you most; whether your idea of fun is hiking through mountains or lounging on white-sand beaches; if food is more important than sights when planning an itinerary (and vice versa).</p>
+                                {
+                                    singledata && (
+                                        <p className="mt-3">{singledata.desc}</p>
+                                    )
+                                }
                                 <p>There are also practical considerations like cost and time spent traveling from place to place and maybe even how much luggage space there is in the car/plane/train compartment where we'll be sleeping tonight! But no matter what kind of traveler they are or what they're looking for out of their next trip abroad, everyone should consider many factors before booking their flight(s).</p>
                                 <div className="testim_1i1 p-4  bg-light text-center">
                                     <p className="fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
@@ -75,20 +124,27 @@ export default function BlogsData() {
                                 <div className="blog_dt1ib1">
                                     <h2>Related Blog</h2>
                                     <div className="blog_h1 row mt-4">
-                                        <div className="col-md-6">
-                                            <div className="blog_h1l">
-                                                <div className="grid clearfix">
-                                                    <figure className="effect-jazz mb-0">
-                                                        <a href="#"><img src="img/28.jpg" className="w-100" alt="abc" /></a>
-                                                    </figure>
-                                                </div>
-                                                <h5 className="font_14 mt-3 bg_dark text-white d-inline-block rounded-3 p-2 px-3">May 9, 2023</h5>
-                                                <h4 className="mt-3 fs-3"><a href="#">Plan the Perfect Vacation</a></h4>
-                                                <p className="mt-3">Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help readers create a comprehensive travel itinerary. From choosing a destination to booking accommodations and activities, readers will learn how to plan a stress-free and enjoyable trip.</p>
-                                                <h6 className="mb-0 mt-4"><a className="button" href="#">Read More</a></h6>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
+                                        {
+                                            getapi && getapi.slice(0, 2).map((data, key) => {
+                                                return (
+                                                    <div className="col-md-6" key={data.id}>
+                                                        <div className="blog_h1l">
+                                                            <div className="grid clearfix">
+                                                                <figure className="effect-jazz mb-0">
+                                                                    <a href="#"><img src={data.img} className="w-100" alt="abc" style={{ height: 400 }}/></a>
+                                                                </figure>
+                                                            </div>
+                                                            <h5 className="font_14 mt-3 bg_dark text-white d-inline-block rounded-3 p-2 px-3">{data.date}</h5>
+                                                            <h4 className="mt-3 fs-3"><a href="#">{data.title}</a></h4>
+                                                            <p className="mt-3">{data.desc}</p>
+                                                            <h6 className="mb-0 mt-4"><button className="button btn" href="#" onClick={()=>getkey(key)}>Read More</button></h6>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+                                        {/* <div className="col-md-6">
                                             <div className="blog_h1l">
                                                 <div className="grid clearfix">
                                                     <figure className="effect-jazz mb-0">
@@ -100,7 +156,7 @@ export default function BlogsData() {
                                                 <p className="mt-3">Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help readers create a comprehensive travel itinerary. From choosing a destination to booking accommodations and activities, readers will learn how to plan a stress-free and enjoyable trip.</p>
                                                 <h6 className="mb-0 mt-4"><a className="button" href="#">Read More</a></h6>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="blog_dt1ib2 mt-4">

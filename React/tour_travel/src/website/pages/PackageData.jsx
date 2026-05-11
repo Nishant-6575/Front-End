@@ -3,135 +3,160 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
 import useCrudApi from '../../Custom/crudApi'
+import { data, useLocation, useNavigate } from 'react-router-dom'
 
 export default function PackageData() {
-    const {getapi}=useCrudApi("http://localhost:3000/package")
+    const { getapi } = useCrudApi("http://localhost:3000/package")
 
-    const[singledata,setsingledata]=useState(null)
-    useEffect(()=>{
-        setsingledata(getapi[0])
-    })
-    
+    const [singledata, setsingledata] = useState(null)
+
+    const location = useLocation()
+
+    const id = location.state
+
+    useEffect(() => {
+        if (id == null) {
+            setsingledata(getapi[0])
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        } else {
+            setsingledata(getapi[id])
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+    }, [getapi, id])
+
+    // details btn click and move to top
+    const getkey = async (key) => {
+        setsingledata(getapi[key])
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
     return (
         <div>
             <Header />
             <NavTitle name="Package Details" title="Package Details" img="https://cdn.pixabay.com/photo/2021/08/12/05/19/cathedral-6539937_1280.jpg" />
             <div>
                 <section id="pack_dt" className="p_3 px-3 bg-light">
-                    <div className="container-fluid">
-                        <div className="row center_h1">
-                            <div className="col-md-4">
-                                <div className="center_h1i position-relative">
-                                    <div className="center_h1i1">
-                                        <div className="grid clearfix">
-                                            <figure className="effect-jazz mb-0">
-                                               {
-                                                singledata && (
-                                                    <a href="#"><img src={singledata.img} className="w-100" alt="abc" /></a>
-
-                                                )
-                                               } 
-                                                
-                                            </figure>
+                    {
+                        singledata && (
+                            <div className="container-fluid">
+                                <div className="row center_h1">
+                                    <div className="col-md-4">
+                                        <div className="center_h1i position-relative">
+                                            <div className="center_h1i1">
+                                                <div className="grid clearfix">
+                                                    <figure className="effect-jazz mb-0">
+                                                        <a href="#"><img src={singledata.img} className="w-100" alt="abc" /></a>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
+                                                <h5 className="text-white">Horse Ride</h5>
+                                                <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
+                                            </div></a>
                                         </div>
                                     </div>
-                                    <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
-                                        <h5 className="text-white">Horse Ride</h5>
-                                        <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
-                                    </div></a>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="center_h1i position-relative">
-                                    <div className="center_h1i1">
-                                        <div className="grid clearfix">
-                                            <figure className="effect-jazz mb-0">
-                                                <a href="#"><img src="img/3.jpg" className="w-100" alt="abc" /></a>
-                                            </figure>
+                                    <div className="col-md-4">
+                                        <div className="center_h1i position-relative">
+                                            <div className="center_h1i1">
+                                                <div className="grid clearfix">
+                                                    <figure className="effect-jazz mb-0">
+                                                        <a href="#"><img src={singledata.img} className="w-100" alt="abc" /></a>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
+                                                <h5 className="text-white">Nulla Augue</h5>
+                                                <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
+                                            </div></a>
                                         </div>
                                     </div>
-                                    <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
-                                        <h5 className="text-white">Nulla Augue</h5>
-                                        <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
-                                    </div></a>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="center_h1i position-relative">
-                                    <div className="center_h1i1">
-                                        <div className="grid clearfix">
-                                            <figure className="effect-jazz mb-0">
-                                                <a href="#"><img src="img/5.jpg" className="w-100" alt="abc" /></a>
-                                            </figure>
+                                    <div className="col-md-4">
+                                        <div className="center_h1i position-relative">
+                                            <div className="center_h1i1">
+                                                <div className="grid clearfix">
+                                                    <figure className="effect-jazz mb-0">
+                                                        <a href="#"><img src={singledata.img} className="w-100" alt="abc" /></a>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
+                                                <h5 className="text-white">Lorem Porta</h5>
+                                                <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
+                                            </div></a>
                                         </div>
                                     </div>
-                                    <a href="#"><div className="center_h1i2 position-absolute w-100 text-center h-100 top-0">
-                                        <h5 className="text-white">Lorem Porta</h5>
-                                        <h6 className="mb-0 font_14 text-light">Try this experience now !</h6>
-                                    </div></a>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row pack_dt1 mt-4">
-                            <div className="col-md-4">
-                                <div className="pack_dt1l">
-                                    <h2>Lorem Porta</h2>
-                                    <h6 className="mb-0"><i className="fa fa-map-marker me-1 col_green" /> Thailand</h6>
-                                </div>
-                            </div>
-                            <div className="col-md-8">
-                                <div className="pack_dt1r">
-                                    <div className="pack_dt1ri row">
-                                        <div className="col-md-4">
-                                            <div className="pack_dt1ri1 row">
-                                                <div className="col-md-3 col-3">
-                                                    <div className="pack_dt1ri1l">
-                                                        <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-clock-o" /></span>
+                                <div className="row pack_dt1 mt-4">
+                                    <div className="col-md-4">
+                                        <div className="pack_dt1l">
+                                            <h2>{singledata.name}</h2>
+                                            <h6 className="mb-0"><i className="fa fa-map-marker me-1 col_green" /> {singledata.location}</h6>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="pack_dt1r">
+                                            <div className="pack_dt1ri row">
+                                                <div className="col-md-4">
+                                                    <div className="pack_dt1ri1 row">
+                                                        <div className="col-md-3 col-3">
+                                                            <div className="pack_dt1ri1l">
+                                                                <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-clock-o" /></span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-9 col-9">
+                                                            <div className="pack_dt1ri1r">
+                                                                <h6>Durations</h6>
+                                                                <h5 className="mb-0">{singledata.days} Days</h5>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-md-9 col-9">
-                                                    <div className="pack_dt1ri1r">
-                                                        <h6>Durations</h6>
-                                                        <h5 className="mb-0">1 Week</h5>
+                                                <div className="col-md-4">
+                                                    <div className="pack_dt1ri1 row">
+                                                        <div className="col-md-3 col-3">
+                                                            <div className="pack_dt1ri1l">
+                                                                <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-road" /></span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-9 col-9">
+                                                            <div className="pack_dt1ri1r">
+                                                                <h6>Difficulty</h6>
+                                                                <h5 className="mb-0">Easy</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <div className="pack_dt1ri1 row">
+                                                        <div className="col-md-3 col-3">
+                                                            <div className="pack_dt1ri1l">
+                                                                <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-child" /></span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-9 col-9">
+                                                            <div className="pack_dt1ri1r">
+                                                                <h6>Min Age</h6>
+                                                                <h5 className="mb-0">0</h5>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-md-4">
-                                            <div className="pack_dt1ri1 row">
-                                                <div className="col-md-3 col-3">
-                                                    <div className="pack_dt1ri1l">
-                                                        <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-road" /></span>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-9 col-9">
-                                                    <div className="pack_dt1ri1r">
-                                                        <h6>Difficulty</h6>
-                                                        <h5 className="mb-0">Easy</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <div className="pack_dt1ri1 row">
-                                                <div className="col-md-3 col-3">
-                                                    <div className="pack_dt1ri1l">
-                                                        <span className="d-inline-block bg_green fs-4  text-white text-center rounded-circle"><i className="fa fa-child" /></span>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-9 col-9">
-                                                    <div className="pack_dt1ri1r">
-                                                        <h6>Min Age</h6>
-                                                        <h5 className="mb-0">0</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        )
+                    }
                 </section>
                 <section id="pack_db" className="p_3 px-3">
                     <div className="container-fluid">
@@ -308,11 +333,15 @@ export default function PackageData() {
                                                     <h5>From</h5>
                                                 </div>
                                             </div>
-                                            <div className="col-md-6 col-6">
-                                                <div className="pack_db1r1i1r text-end">
-                                                    <h3>$ 480</h3>
-                                                </div>
-                                            </div>
+                                            {
+                                                singledata && (
+                                                    <div className="col-md-6 col-6">
+                                                        <div className="pack_db1r1i1r text-end">
+                                                            <h3>$ {singledata.price}</h3>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
                                         </div>
                                         <hr />
                                         <ul className="nav nav-tabs mb-0 justify-content-center border-0">
@@ -401,156 +430,62 @@ export default function PackageData() {
                             </div>
                         </div>
                         <div className="desti3 row mt-4">
-                            <div className="col-md-4">
-                                <div className="desti3im">
-                                    <div className="desti3im1 position-relative">
-                                        <div className="desti3im1i">
-                                            <div className="grid clearfix">
-                                                <figure className="effect-jazz mb-0">
-                                                    <a href="#"><img src="img/7.jpg" className="w-100" alt="abc" /></a>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div className="desti3im1i1 shadow_box p-3 bg-white rounded-3 position-absolute">
-                                            <div className="desti3im1i1i row">
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1il">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-clock-o me-1 col_green" /> 1 Week</a></h6>
+                            {
+                                getapi && getapi.slice(0, 3).map((data, key) => {
+                                    return (
+                                        <div className="col-md-4" key={data.id}>
+                                            <div className="desti3im">
+                                                <div className="desti3im1 position-relative">
+                                                    <div className="desti3im1i">
+                                                        <div className="grid clearfix">
+                                                            <figure className="effect-jazz mb-0">
+                                                                <a href="#"><img src={data.img} className="w-100" alt="abc" style={{ height: 250 }} /></a>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div className="desti3im1i1 shadow_box p-3 bg-white rounded-3 position-absolute">
+                                                        <div className="desti3im1i1i row">
+                                                            <div className="col-md-6 col-6">
+                                                                <div className="desti3im1i1il">
+                                                                    <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-clock-o me-1 col_green" /> {data.days} Days</a></h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 col-6">
+                                                                <div className="desti3im1i1ir text-end">
+                                                                    <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-envelope col_green" /></a> <a href="#"><i className="fa fa-map-pin col_green ms-2" /></a></h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="desti3im1i2 top-0 position-absolute w-100 text-end p-3">
+                                                        <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
                                                     </div>
                                                 </div>
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1ir text-end">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-envelope col_green" /></a> <a href="#"><i className="fa fa-map-pin col_green ms-2" /></a></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="desti3im1i2 top-0 position-absolute w-100 text-end p-3">
-                                            <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
-                                        </div>
-                                    </div>
-                                    <div className="desti3im2 shadow_box p-4">
-                                        <h5 className="mt-4 fs-4"><a href="#">Lorem Amet</a></h5>
-                                        <h6><i className="fa fa-map-marker me-1 col_green" /> Thailand</h6>
-                                        <hr />
-                                        <p>Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</p>
-                                        <hr />
-                                        <div className="desti3im2i row">
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2il">
-                                                    <h6 className="mb-0 mt-2"><a className="button" href="#">Details</a></h6>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2ir text-end">
-                                                    <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
-                                                        $ 498</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="desti3im">
-                                    <div className="desti3im1 position-relative">
-                                        <div className="desti3im1i">
-                                            <div className="grid clearfix">
-                                                <figure className="effect-jazz mb-0">
-                                                    <a href="#"><img src="img/8.jpg" className="w-100" alt="abc" /></a>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div className="desti3im1i1 shadow_box p-3 bg-white rounded-3 position-absolute">
-                                            <div className="desti3im1i1i row">
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1il">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-clock-o me-1 col_green" /> 2 Week</a></h6>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1ir text-end">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-envelope col_green" /></a> <a href="#"><i className="fa fa-map-pin col_green ms-2" /></a></h6>
+                                                <div className="desti3im2 shadow_box p-4">
+                                                    <h5 className="mt-4 fs-4"><a href="#">{data.name}</a></h5>
+                                                    <h6><i className="fa fa-map-marker me-1 col_green" /> {data.location}</h6>
+                                                    <hr />
+                                                    <p>{data.desc}</p>
+                                                    <hr />
+                                                    <div className="desti3im2i row">
+                                                        <div className="col-md-6 col-6">
+                                                            <div className="desti3im2il">
+                                                                <h6 className="mb-0 mt-2"><button className="button btn" onClick={() => getkey(key)}>Details</button></h6>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-6 col-6">
+                                                            <div className="desti3im2ir text-end">
+                                                                <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
+                                                                    $ {data.price}</h4>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="desti3im1i2 top-0 position-absolute w-100 text-end p-3">
-                                            <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
-                                        </div>
-                                    </div>
-                                    <div className="desti3im2 shadow_box p-4">
-                                        <h5 className="mt-4 fs-4"><a href="#">Dolor Porta</a></h5>
-                                        <h6><i className="fa fa-map-marker me-1 col_green" /> Thailand</h6>
-                                        <hr />
-                                        <p>Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</p>
-                                        <hr />
-                                        <div className="desti3im2i row">
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2il">
-                                                    <h6 className="mb-0 mt-2"><a className="button" href="#">Details</a></h6>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2ir text-end">
-                                                    <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
-                                                        $ 398</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="desti3im">
-                                    <div className="desti3im1 position-relative">
-                                        <div className="desti3im1i">
-                                            <div className="grid clearfix">
-                                                <figure className="effect-jazz mb-0">
-                                                    <a href="#"><img src="img/9.jpg" className="w-100" alt="abc" /></a>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div className="desti3im1i1 shadow_box p-3 bg-white rounded-3 position-absolute">
-                                            <div className="desti3im1i1i row">
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1il">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-clock-o me-1 col_green" /> 3 Week</a></h6>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-6 col-6">
-                                                    <div className="desti3im1i1ir text-end">
-                                                        <h6 className="mb-0 font_14"><a href="#"><i className="fa fa-envelope col_green" /></a> <a href="#"><i className="fa fa-map-pin col_green ms-2" /></a></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="desti3im1i2 top-0 position-absolute w-100 text-end p-3">
-                                            <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
-                                        </div>
-                                    </div>
-                                    <div className="desti3im2 shadow_box p-4">
-                                        <h5 className="mt-4 fs-4"><a href="#">Semper Quis</a></h5>
-                                        <h6><i className="fa fa-map-marker me-1 col_green" /> Thailand</h6>
-                                        <hr />
-                                        <p>Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</p>
-                                        <hr />
-                                        <div className="desti3im2i row">
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2il">
-                                                    <h6 className="mb-0 mt-2"><a className="button" href="#">Details</a></h6>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 col-6">
-                                                <div className="desti3im2ir text-end">
-                                                    <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
-                                                        $ 299</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </section>
