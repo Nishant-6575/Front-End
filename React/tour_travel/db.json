@@ -108,39 +108,39 @@
   "service": [
     {
       "id": "1",
-      "name": "Ocean Cruises",
+      "name": "Airline Tickets",
       "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
       "icons": "fa fa-bus"
     },
     {
       "id": "2",
-      "name": "Means of Transport",
+      "name": "Ocean Cruises",
       "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
       "icons": "fa fa-contao"
     },
     {
       "id": "3",
-      "name": "Airline Tickets",
+      "name": "Means of Transport",
       "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
       "icons": "fa fa-car"
     },
     {
       "id": "4",
+      "name": "Travel Travel itineraries",
+      "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
+      "icons": "fa fa-tripadvisor"
+    },
+    {
+      "id": "5",
       "name": "Travel Insurance",
       "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
       "icons": "fa fa-life-ring"
     },
     {
-      "id": "_sTEoVYpWow",
-      "name": "New package4",
-      "desc": "Dummy Data",
-      "icons": "fa fa-life-ring"
-    },
-    {
-      "id": "8U-C-rbHmSI",
-      "name": "Dolor Porta2",
-      "desc": "Dummy Data",
-      "icons": "fa fa-car"
+      "id": "6",
+      "name": "Local Guide",
+      "desc": "Our travel agency specializes in providing our customers with the best deals on airline tickets.",
+      "icons": "fa fa-user-secret"
     }
   ],
   "blog": [
@@ -182,7 +182,7 @@
     {
       "id": "6",
       "img": "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D",
-      "date": "May 10,2023",
+      "date": "2023-05-10",
       "title": "Explore the Wonders",
       "desc": "Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help readers create a comprehensive travel itinerary. From choosing a destination to booking accommodations and activities, readers will learn how to plan a stress-free and enjoyable trip."
     }
@@ -192,22 +192,22 @@
       "id": "1",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOaPnazUg5jb4P6OXyoOLIpUB7BRCx9iRWFg&s",
       "title": "Half Board",
-      "price": 50,
-      "desc": "Transfers from Airport Minimum 3 Star Hotel Alcoholic beverages Incl. Museum Tickets Meals in Restaurants"
+      "price": "50",
+      "desc": "Transfers from Airport, Minimum 3 Star Hotel, Alcoholic beverages, Incl. Museum Tickets, Meals in Restaurants"
     },
     {
       "id": "2",
-      "img": "https://www.google.com/imgres?q=tourist%20place&imgurl=https%3A%2F%2Fmedia.easemytrip.com%2Fmedia%2FBlog%2FIndia%2F637033873695687971%2F637033873695687971fsrzol.jpg&imgrefurl=https%3A%2F%2Fwww.easemytrip.com%2Fblog%2Fbest-places-to-visit-in-kerala&docid=QW8XdaRMOPPLpM&tbnid=g8Kwwj3J5oDpSM&vet=12ahUKEwj5wNXRl5eUAxWjwTgGHTnOJb0QnPAOegQINhAB..i&w=800&h=450&hcb=2&ved=2ahUKEwj5wNXRl5eUAxWjwTgGHTnOJb0QnPAOegQINhAB",
+      "img": "https://media.easemytrip.com/media/Blog/India/637033873695687971/637033873695687971fsrzol.jpg",
       "title": "All Inclusive",
       "price": 38,
-      "desc": "Transfers from Airport Minimum 3 Star Hotel Alcoholic beverages Incl. Museum Tickets Meals in Restaurants"
+      "desc": "Transfers from Airport, Minimum 3 Star Hotel, Alcoholic beverages, Incl. Museum Tickets, Meals in Restaurants"
     },
     {
       "id": "3",
       "img": "https://www.swantour.com/blogs/wp-content/uploads/2018/02/Tourist-Places-in-Bangalore.jpg",
       "title": "Excursions Included",
       "price": 58,
-      "desc": "Transfers from Airport Minimum 3 Star Hotel Alcoholic beverages Incl. Museum Tickets Meals in Restaurants"
+      "desc": "Transfers from Airport, Minimum 3 Star Hotel, Alcoholic beverages, Incl. Museum Tickets, Meals in Restaurants"
     }
   ],
   "tours": [

@@ -115,8 +115,7 @@ export default function PackAdd() {
                         <div className="blog_dt1ib3i row mt-4">
                             <div className="col-md-12">
                                 <div className="blog_dt1ib3il">
-                                    <textarea placeholder="Enter your  desc" value={input.desc} name='desc' onChange={getchange} className="form-control form_text border-0 bg-light" defaultValue={""} />
-
+                                    <textarea placeholder="Enter your  desc" value={input.desc} name='desc' onChange={getchange} className="form-control form_text border-0 bg-light" />
                                 </div>
                             </div>
                             <div className="col-md-12 mt-4">

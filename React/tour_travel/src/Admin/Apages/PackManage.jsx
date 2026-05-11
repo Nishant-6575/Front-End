@@ -72,10 +72,10 @@ export default function PackManage() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Sr. No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -190,7 +190,7 @@ export default function PackManage() {
                                                         </div>
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Loaction" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Location" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -210,14 +210,18 @@ export default function PackManage() {
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
                                                                 <input placeholder="Enter your Images" name='img' value={edit.img} onChange={getedit} className="form-control border-0 bg-light" type="url" />
-                                                                <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                {
+                                                                    edit.img && (
+                                                                        <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                    )
+                                                                }
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="blog_dt1ib3i row mt-4">
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
-                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" defaultValue={""} />
+                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" />
 
                                                             </div>
                                                         </div>

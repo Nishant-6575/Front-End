@@ -27,9 +27,9 @@ export default function PackMng() {
                     <thead>
                         <tr>
                             <th scope="col">Sr. No</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -69,7 +69,7 @@ export default function PackMng() {
                                                     <div className="desti3im1i">
                                                         <div className="grid clearfix">
                                                             <figure className="effect-jazz mb-0">
-                                                                <a href="detail.html"><img src={view.img} className="w-100" alt="abc" /></a>
+                                                                <a href="detail.html"><img src={view.img} className="w-100" alt="abc"/></a>
                                                             </figure>
                                                         </div>
                                                     </div>
@@ -98,17 +98,10 @@ export default function PackMng() {
                                                     <p>{view.desc}</p>
                                                     <hr />
                                                     <div className="desti3im2i row">
-                                                        <div className="col-md-6 col-6">
-                                                            <div className="desti3im2il">
-                                                                <h6 className="mb-0 mt-2"><a className="button" href="detail.html">Details</a></h6>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-6 col-6">
                                                             <div className="desti3im2ir text-end">
                                                                 <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
                                                                     ${view.price}</h4>
                                                             </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +137,7 @@ export default function PackMng() {
                                                         </div>
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Loaction" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="location" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -164,15 +157,19 @@ export default function PackMng() {
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
                                                                 <input placeholder="Enter your Images" name='img' value={edit.img} onChange={getedit} className="form-control border-0 bg-light" type="url" />
-                                                                <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                {
+                                                                    edit.img &&(
+                                                                         <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                    )
+                                                                }
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="blog_dt1ib3i row mt-4">
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
-                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" defaultValue={""} />
-
+                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" />
                                                             </div>
                                                         </div>
                                                     </div>

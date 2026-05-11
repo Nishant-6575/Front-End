@@ -131,32 +131,29 @@ export default function BlogsData() {
                                                         <div className="blog_h1l">
                                                             <div className="grid clearfix">
                                                                 <figure className="effect-jazz mb-0">
-                                                                    <a href="#"><img src={data.img} className="w-100" alt="abc" style={{ height: 400 }}/></a>
+                                                                    <a href="#"><img src={data.img} className="w-100" alt="abc" style={{ height: 400 }} /></a>
                                                                 </figure>
                                                             </div>
-                                                            <h5 className="font_14 mt-3 bg_dark text-white d-inline-block rounded-3 p-2 px-3">{data.date}</h5>
+                                                            <h5 className="font_14 mt-3 bg_dark text-white d-inline-block rounded-3 p-2 px-3">
+                                                                {
+                                                                    new Date(data.date).toLocaleDateString(
+                                                                        "en-US",
+                                                                        {
+                                                                            month: "short",
+                                                                            day: "numeric",
+                                                                            year: "numeric"
+                                                                        }
+                                                                    )
+                                                                }
+                                                            </h5>
                                                             <h4 className="mt-3 fs-3"><a href="#">{data.title}</a></h4>
                                                             <p className="mt-3">{data.desc}</p>
-                                                            <h6 className="mb-0 mt-4"><button className="button btn" href="#" onClick={()=>getkey(key)}>Read More</button></h6>
+                                                            <h6 className="mb-0 mt-4"><button className="button btn" href="#" onClick={() => getkey(key)}>Read More</button></h6>
                                                         </div>
                                                     </div>
                                                 )
                                             })
                                         }
-
-                                        {/* <div className="col-md-6">
-                                            <div className="blog_h1l">
-                                                <div className="grid clearfix">
-                                                    <figure className="effect-jazz mb-0">
-                                                        <a href="#"><img src="img/29.jpg" className="w-100" alt="abc" /></a>
-                                                    </figure>
-                                                </div>
-                                                <h5 className="font_14 mt-3 bg_dark text-white d-inline-block rounded-3 p-2 px-3">May 10, 2023</h5>
-                                                <h4 className="mt-3 fs-3"><a href="#">Explore the Wonders</a></h4>
-                                                <p className="mt-3">Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help readers create a comprehensive travel itinerary. From choosing a destination to booking accommodations and activities, readers will learn how to plan a stress-free and enjoyable trip.</p>
-                                                <h6 className="mb-0 mt-4"><a className="button" href="#">Read More</a></h6>
-                                            </div>
-                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="blog_dt1ib2 mt-4">

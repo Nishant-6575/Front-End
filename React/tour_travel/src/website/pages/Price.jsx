@@ -2,8 +2,13 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function Price() {
+    const { getapi } = useCrudApi("http://localhost:3000/offers")
+
+    const { getapi: tourapi } = useCrudApi("http://localhost:3000/tours")
+
     return (
         <div>
             <Header />
@@ -20,61 +25,55 @@ export default function Price() {
                         </div>
                         <div className="price_1 row">
                             <div className="col-md-4">
-                                <div className="price_1i p-4  bg-light rounded_10 text-center">
-                                    <div className="grid clearfix mb-4">
-                                        <figure className="effect-jazz mb-0">
-                                            <a href="#"><img src="img/5.jpg" className="w-100" alt="abc" /></a>
-                                        </figure>
-                                    </div>
-                                    <h5>Half Board</h5>
-                                    <h1 className="font_60 mt-3">$ 50 <span className="fs-6">/ Day</span></h1>
-                                    <ul className="mt-3">
-                                        <li>Transfers from Airport</li>
-                                        <li className="mt-2">Minimum 3 Star Hotel</li>
-                                        <li className="mt-2">Alcoholic beverages</li>
-                                        <li className="mt-2">Incl. Museum Tickets</li>
-                                        <li className="mt-2">Meals in Restaurants</li>
-                                    </ul>
-                                    <h6 className="mb-0 mt-4"><a className="button d-block text-center" href="#">More Info</a></h6>
-                                </div>
+                                {
+                                    getapi[0] && (
+                                        <div className="price_1i p-4  bg-light rounded_10 text-center">
+                                            <div className="grid clearfix mb-4">
+                                                <figure className="effect-jazz mb-0">
+                                                    <a><img src={getapi[0].img} className="w-100" alt="Image not found" /></a>
+                                                </figure>
+                                            </div>
+                                            <h5 className="text-black">{getapi[0].title}</h5>
+                                            <h1 className="font_60 mt-3">$ {getapi[0].price} <span className="fs-6">/ Day</span></h1>
+                                            <p className="text-black">{getapi[0].desc}</p>
+                                            <h6 className="mb-0 mt-4"><a className="button d-block text-center" href="#">More Info</a></h6>
+                                        </div>
+                                    )
+                                }
                             </div>
                             <div className="col-md-4">
-                                <div className="price_1i p-4  bg_green  rounded_10 text-center">
-                                    <div className="grid clearfix mb-4">
-                                        <figure className="effect-jazz mb-0">
-                                            <a href="#"><img src="img/7.jpg" className="w-100" alt="abc" /></a>
-                                        </figure>
-                                    </div>
-                                    <h5 className="text-white">All Inclusive</h5>
-                                    <h1 className="font_60 mt-3 text-white">$ 38 <span className="fs-6">/ Day</span></h1>
-                                    <ul className="mt-3 text-light">
-                                        <li>Transfers from Airport</li>
-                                        <li className="mt-2">Minimum 3 Star Hotel</li>
-                                        <li className="mt-2">Alcoholic beverages</li>
-                                        <li className="mt-2">Incl. Museum Tickets</li>
-                                        <li className="mt-2">Meals in Restaurants</li>
-                                    </ul>
-                                    <h6 className="mb-0 mt-4"><a className="button bg-white text-black d-block text-center" href="#">Request Now</a></h6>
-                                </div>
+                                {
+                                    getapi[1] && (
+                                        <div className="price_1i p-4  bg_green  rounded_10 text-center">
+                                            <div className="grid clearfix mb-4">
+                                                <figure className="effect-jazz mb-0">
+                                                    <a><img src={getapi[1].img} className="w-100" alt="Image not found" /></a>
+                                                </figure>
+                                            </div>
+                                            <h5 className="text-white">{getapi[1].title}</h5>
+                                            <h1 className="font_60 mt-3 text-white">$ {getapi[1].price} <span className="fs-6">/ Day</span></h1>
+                                            <p className="text-white">{getapi[1].desc}</p>
+                                            <h6 className="mb-0 mt-4"><a className="button bg-white text-black d-block text-center" href="#">Request Now</a></h6>
+                                        </div>
+                                    )
+                                }
                             </div>
                             <div className="col-md-4">
-                                <div className="price_1i p-4 bg_dark  rounded_10 text-center">
-                                    <div className="grid clearfix mb-4">
-                                        <figure className="effect-jazz mb-0">
-                                            <a href="#"><img src="img/8.jpg" className="w-100" alt="abc" /></a>
-                                        </figure>
-                                    </div>
-                                    <h5 className="text-white">Excursions Included</h5>
-                                    <h1 className="font_60 mt-3 text-white">$ 58 <span className="fs-6">/ Day</span></h1>
-                                    <ul className="mt-3 text-light">
-                                        <li>Transfers from Airport</li>
-                                        <li className="mt-2">Minimum 3 Star Hotel</li>
-                                        <li className="mt-2">Alcoholic beverages</li>
-                                        <li className="mt-2">Incl. Museum Tickets</li>
-                                        <li className="mt-2">Meals in Restaurants</li>
-                                    </ul>
-                                    <h6 className="mb-0 mt-4"><a className="button_1 d-block text-center" href="#">Read More</a></h6>
-                                </div>
+                                {
+                                    getapi[2] && (
+                                        <div className="price_1i p-4 bg_dark  rounded_10 text-center">
+                                            <div className="grid clearfix mb-4">
+                                                <figure className="effect-jazz mb-0">
+                                                    <a><img src={getapi[2].img} className="w-100" alt="Image not found" /></a>
+                                                </figure>
+                                            </div>
+                                            <h5 className="text-white">{getapi[2].title}</h5>
+                                            <h1 className="font_60 mt-3 text-white">$ {getapi[2].price} <span className="fs-6">/ Day</span></h1>
+                                            <p className="text-white">{getapi[2].desc}</p>
+                                            <h6 className="mb-0 mt-4"><a className="button_1 d-block text-center" href="#">Read More</a></h6>
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
@@ -89,21 +88,33 @@ export default function Price() {
                                             <div className="carousel-item">
                                                 <div className="serv_h1li row">
                                                     <div className="col-md-12">
-                                                        <img src="img/15.jpg" className="w-100" alt="abc" />
+                                                        {
+                                                            tourapi[0] && (
+                                                                <img src={tourapi[0].img} className="w-100" alt="image not found" />
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <div className="serv_h1li row">
                                                     <div className="col-md-12">
-                                                        <img src="img/16.jpg" className="w-100" alt="abc" />
+                                                        {
+                                                            tourapi[0] && (
+                                                                <img src={tourapi[0].img} className="w-100" alt="image not found" />
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="carousel-item active">
                                                 <div className="serv_h1li row">
                                                     <div className="col-md-12">
-                                                        <img src="img/17.jpg" className="w-100" alt="abc" />
+                                                        {
+                                                            tourapi[0] && (
+                                                                <img src={tourapi[0].img} className="w-100" alt="image not found" />
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,19 +131,28 @@ export default function Price() {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div className="price_o1r">
-                                    <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
-                                    <h1 className="mt-3">Last Minute   Summer <br />    Travel Tours</h1>
-                                    <h3 className="mt-3"><span className="text-decoration-line-through text-muted">$ 930</span> $ 430</h3>
-                                    <p className="mt-3">Come to the agency to take advantage of our last minute summer trips. You can go on a cruise, in a wonderful tourist village or take an organized tour at an impactful price with 100% quality. Our offers are updated weekly so don't miss out on this fantastic opportunity.</p>
-                                    <ul className="mb-4">
-                                        <li className="d-inline-block"><i className="fa fa-map-marker me-1 col_green fs-5 align-middle" /> Europe </li>
-                                        <li className="d-inline-block mx-4"><i className="fa fa-plane me-1 col_green fs-5 align-middle" /> Air Travel </li>
-                                        <li className="d-inline-block"><i className="fa fa-sun-o me-1 col_green fs-5 align-middle" /> Summer Months </li>
-                                    </ul>
-                                    <img src="img/20.jpg" className="rounded-circle float-start me-3" alt="abc" />
-                                    <h6 className="mb-0 fw-bold lh-base">Ipsum Augue <br /> <span className="col_green fw-normal">Experienced Travel Planner</span></h6>
-                                </div>
+                                {
+                                    tourapi[0] && (
+                                        <div className="price_o1r">
+                                            <h6 className="d-inline-block mb-0 bg_green text-white p-1 px-3 font_14 rounded_50">SALE</h6>
+                                            <h1 className="mt-3">{tourapi[0].title}</h1>
+                                            <h3 className="mt-3"><span className="text-decoration-line-through text-muted">$ {tourapi[0].price}</span> $ {tourapi[0].saleprice}</h3>
+                                            <p className="mt-3">{tourapi[0].desc}</p>
+                                            <ul className="mb-4">
+                                                <li className="d-inline-block"><i className="fa fa-map-marker me-1 col_green fs-5 align-middle" /> {tourapi[0].location} </li>
+                                                <li className="d-inline-block mx-4"><i className="fa fa-plane me-1 col_green fs-5 align-middle" /> {tourapi[0].modeoftravel} </li>
+                                                <li className="d-inline-block"><i className="fa fa-sun-o me-1 col_green fs-5 align-middle" /> {tourapi[0].dates} </li>
+                                            </ul>
+                                            {
+                                                tourapi[0].tourexpert.photo && (
+                                                    <img src={tourapi[0].tourexpert.photo} className="rounded-circle float-start me-3" alt="image not found" style={{ width: 100 }} />
+                                                )
+                                            }
+                                            <h6 className="mb-0 fw-bold lh-base">{tourapi[0].tourexpert.name}<br /> <span className="col_green fw-normal">{tourapi[0].tourexpert.experience}</span></h6>
+                                        </div>
+                                    )
+                                }
+
                             </div>
                         </div>
                     </div>

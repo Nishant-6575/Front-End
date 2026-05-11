@@ -30,7 +30,10 @@ export default function Aheader() {
                                         <NavLink className="nav-link" to="/sermanage">Services Manage </NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/price">Pricing </NavLink>
+                                        <NavLink className="nav-link" to="/blogmanage">Blog Manage </NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/pricemanage">Manage Pricing </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/contact">Contact </NavLink>

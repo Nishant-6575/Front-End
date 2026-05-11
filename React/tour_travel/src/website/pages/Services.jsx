@@ -2,8 +2,10 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function Services() {
+    const { getapi } = useCrudApi("http://localhost:3000/service")
     return (
         <div>
             <Header />
@@ -33,8 +35,8 @@ export default function Services() {
                                     <p className="mb-4">We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound.</p>
                                     <div id="carouselExampleCaptions1" className="carousel slide" data-bs-ride="carousel">
                                         <div className="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to={0} className aria-label="Slide 1" />
-                                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to={1} aria-label="Slide 2" className="active" aria-current="true" />
+                                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to={0} className="active" aria-label="Slide 1" />
+                                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to={1} aria-label="Slide 2" aria-current="true" />
                                         </div>
                                         <div className="carousel-inner">
                                             <div className="carousel-item">
@@ -82,51 +84,21 @@ export default function Services() {
                                 <h1 className="mb-0 mt-3">Perfect Vacation come True</h1>
                             </div>
                         </div>
+
                         <div className="about_pg2 row mt-4 text-center">
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-bus" /></span>
-                                    <h5 className="mt-3">Airline Tickets</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-contao" /></span>
-                                    <h5 className="mt-3">Ocean Cruises</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-car" /></span>
-                                    <h5 className="mt-3">Means of Transport</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="about_pg2 row mt-4 text-center">
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-tripadvisor" /></span>
-                                    <h5 className="mt-3">Travel itineraries</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-life-ring" /></span>
-                                    <h5 className="mt-3">Travel Insurance</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-user-secret" /></span>
-                                    <h5 className="mt-3">Local Guide</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
+                            {
+                                getapi && getapi.map((data, key) => {
+                                    return (
+                                        <div className="col-md-4" key={data.id}>
+                                            <div className="about_pg2i">
+                                                <span className="font_60 col_green"><i className={data.icons} /></span>
+                                                <h5 className="mt-3">{data.name}</h5>
+                                                <p className="mb-0 mt-3">{data.desc}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </section>

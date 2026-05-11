@@ -34,7 +34,7 @@ export default function Package() {
                                 <div className="pack_1l1">
                                     <h5 className="mb-4">Select your destination :</h5>
                                     <select className="form-select" aria-label="Default select example">
-                                        <option selected>All Destinations</option>
+                                        <option defaultValue>All Destinations</option>
                                         <option value={1}>Africa</option>
                                         <option value={2}>India</option>
                                         <option value={3}>England</option>
@@ -204,7 +204,7 @@ export default function Package() {
                                     {
                                         pkg && pkg.map((data, key) => {
                                             return (
-                                                <div className="col-md-6 my-4">
+                                                <div className="col-md-6 my-4" key={data.id}>
                                                     <div className="desti3im">
                                                         <div className="desti3im1 position-relative">
                                                             <div className="desti3im1i">

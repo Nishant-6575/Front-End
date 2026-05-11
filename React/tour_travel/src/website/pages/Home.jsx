@@ -330,7 +330,7 @@ export default function Home() {
                                     <div className="trip_1iir">
                                         <h6 className="fw-bold"><span className="fs-2 col_green align-middle me-1"><i className="fa fa-map-marker" /></span> Destinations</h6>
                                         <select className="form-select font_14 border-0 bg_light" aria-label="Default select example">
-                                            <option selected>All Destinations</option>
+                                            <option defaultValue>All Destinations</option>
                                             <option value={1}>Africa</option>
                                             <option value={2}>India</option>
                                             <option value={3}>England</option>
@@ -346,7 +346,7 @@ export default function Home() {
                                     <div className="trip_1iir">
                                         <h6 className="fw-bold"><span className="fs-2 col_green align-middle me-1"><i className="fa fa-list" /></span> Typologies</h6>
                                         <select className="form-select bg_light font_14 border-0" aria-label="Default select example">
-                                            <option selected>All Typologies</option>
+                                            <option defaultValue>All Typologies</option>
                                             <option value={1}>Sports</option>
                                             <option value={2}>Road Trips</option>
                                             <option value={3}>Budget Travel</option>
@@ -527,7 +527,7 @@ export default function Home() {
                                 <div id="carouselExampleCaptions2" className="carousel slide" data-bs-ride="carousel">
                                     <div className="carousel-indicators">
                                         <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={0} className="active" aria-label="Slide 1" />
-                                        <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2" className aria-current="true" />
+                                        <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2" aria-current="true" />
                                     </div>
                                     <div className="carousel-inner">
                                         <div className="carousel-item active">

@@ -2,12 +2,14 @@ import React from 'react'
 import Header from '../common/Header'
 import NavTitle from '../common/NavTitle'
 import Footer from '../common/Footer'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function About() {
+    const { getapi } = useCrudApi("http://localhost:3000/service")
     return (
         <div>
             <Header />
-            <NavTitle title = "About Us"/>
+            <NavTitle title="About Us" />
             <div>
                 <section id="disc" className="p_3 px-3 bg-light">
                     <div className="container-fluid">
@@ -54,50 +56,19 @@ export default function About() {
                             </div>
                         </div>
                         <div className="about_pg2 row mt-4">
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-bus" /></span>
-                                    <h5 className="mt-3">Airline Tickets</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-contao" /></span>
-                                    <h5 className="mt-3">Ocean Cruises</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-car" /></span>
-                                    <h5 className="mt-3">Means of Transport</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="about_pg2 row mt-4">
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-tripadvisor" /></span>
-                                    <h5 className="mt-3">Travel itineraries</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-life-ring" /></span>
-                                    <h5 className="mt-3">Travel Insurance</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="about_pg2i">
-                                    <span className="font_60 col_green"><i className="fa fa-user-secret" /></span>
-                                    <h5 className="mt-3">Local Guide</h5>
-                                    <p className="mb-0 mt-3">Our travel agency specializes in providing our customers with the best deals on airline tickets.</p>
-                                </div>
-                            </div>
+                            {
+                                getapi && getapi.map((data, key) => {
+                                    return (
+                                        <div className="col-md-4" key={data.id}>
+                                            <div className="about_pg2i">
+                                                <span className="font_60 col_green"><i className={data.icons} /></span>
+                                                <h5 className="mt-3">{data.name}</h5>
+                                                <p className="mb-0 mt-3">{data.desc}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </section>
@@ -171,7 +142,7 @@ export default function About() {
                             <div id="carouselExampleCaptions2" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={0} className="active" aria-label="Slide 1" aria-current="true" />
-                                    <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2" className />
+                                    <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2"/>
                                 </div>
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
