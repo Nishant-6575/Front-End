@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 function Header() {
     return (
@@ -41,15 +41,15 @@ function Header() {
                                 <span className="navbar-toggler-icon" />
                             </button>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul className="navbar-nav mb-0 ms-auto nav_left">
+                                <ul className="navbar-nav m-0 ms-auto nav_left">
                                     <li className="nav-item">
-                                        <NavLink className="nav-link " aria-current="page" to="/" >Home</NavLink>
+                                        <NavLink className="nav-link fs-5" aria-current="page" to="/" >Home</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/about">About </NavLink>
+                                        <NavLink className="nav-link fs-5" to="/about">About </NavLink>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Blog
                                         </a>
                                         <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
@@ -58,7 +58,7 @@ function Header() {
                                         </ul>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Package
                                         </a>
                                         <ul className="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
@@ -67,25 +67,34 @@ function Header() {
                                         </ul>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/services">Services </NavLink>
+                                        <NavLink className="nav-link fs-5" to="/services">Services </NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/price">Pricing </NavLink>
+                                        <NavLink className="nav-link fs-5" to="/price">Pricing </NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/contact">Contact </NavLink>
+                                        <NavLink className="nav-link fs-5" to="/contact">Contact </NavLink>
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav mb-0 ms-auto nav_right">
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#"><i className="fa fa-facebook" /> </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#"><i className="fa fa-twitter" /> </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#"><i className="fa fa-youtube-play" /> </a>
-                                    </li>
+                                    {
+                                        (() => {
+                                            if (!(localStorage.getItem("Uid"))) {
+                                                return (
+                                                    <li className="nav-item">
+                                                        <Link className="nav-link fs-5">Log in </Link>
+                                                    </li>
+                                                )
+                                            } else {
+                                                return (
+                                                    <li className="nav-item d-flex">
+                                                        <Link className="nav-link fs-5">helllo {localStorage.getItem("Uname")}</Link>
+                                                        <Link className="nav-link fs-5">Log out </Link>
+                                                    </li>
+                                                )
+                                            }
+                                        })()
+                                    }
                                 </ul>
                             </div>
                         </div>

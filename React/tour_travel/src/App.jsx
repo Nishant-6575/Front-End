@@ -18,6 +18,9 @@ import { Bounce, ToastContainer } from 'react-toastify'
 import PackMng from './Admin/Apages/PackMng'
 import BlogManage from './Admin/Apages/BlogManage'
 import PricingManage from './Admin/Apages/PricingManage'
+import Alogin from './Admin/Apages/Alogin'
+import Ulogin from './website/pages/Ulogin'
+import URegister from './website/pages/URegister'
 
 function App() {
   return (
@@ -46,6 +49,8 @@ function App() {
           <Route path='/packagedata' element={<PackageData />} />
           <Route path='/price' element={<Price />} />
           <Route path='/services' element={<Services />} />
+          <Route path='/userlogin' element={<Ulogin />} />
+          <Route path='/userregister' element={<URegister />} />
 
           <Route path='*' element={<NotFound />} />
 
@@ -58,6 +63,8 @@ function App() {
           <Route path='/pricemanage' element={<PricingManage />} />
 
           <Route path='/packadd' element={<PackAdd />} />
+
+          <Route path='/adminlogin' element={<Alogin />} />
 
 
         </Routes>
