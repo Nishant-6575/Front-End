@@ -21,6 +21,7 @@ import PricingManage from './Admin/Apages/PricingManage'
 import Alogin from './Admin/Apages/Alogin'
 import Ulogin from './website/pages/Ulogin'
 import URegister from './website/pages/URegister'
+import UserManage from './Admin/Apages/Usermanage'
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route path='/sermanage' element={<ServiceManage />} />
           <Route path='/blogmanage' element={<BlogManage />} />
           <Route path='/pricemanage' element={<PricingManage />} />
+          <Route path='/usermanage' element={<UserManage />} />
 
           <Route path='/packadd' element={<PackAdd />} />
 

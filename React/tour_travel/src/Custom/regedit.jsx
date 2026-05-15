@@ -25,6 +25,26 @@ export default function useRegEdit(api) {
         e.preventDefault()
 
         try {
+
+
+            const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+            if (!emailpattern.test(input.email)) {
+                console.log("Please enter valid email!")
+                toast.error("Please enter valid email!")
+                return false
+            }
+
+            const emailres = await axios.get(`${api}?email=${input.email}`)
+
+            console.log(emailres.data)
+
+            if (emailres.data.length == 1) {
+                console.log("email already registered!")
+                toast.error("email already registered!")
+                return false
+            }
+
             const res = await axios.post(api, input)
             toast.success("User created sucessfully!")
         } catch (error) {

@@ -36,7 +36,7 @@ export default function useCrudApi(apiurl, inp, redir) {
         )
         if (checkEmpty) {
             toast.error("Please fill all field")
-            return
+            return false
         }
         try {
             const res = await axios.post(apiurl, input)

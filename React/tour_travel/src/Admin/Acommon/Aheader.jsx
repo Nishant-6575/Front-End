@@ -52,6 +52,9 @@ export default function Aheader() {
                                     <li className="nav-item">
                                         <NavLink className="nav-link fs-5" to="/pricemanage">Manage Pricing </NavLink>
                                     </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link fs-5" to="/usermanage">Manage User </NavLink>
+                                    </li>
                                 </ul>
                                 <ul className="navbar-nav mb-0 ms-auto nav_right">
                                     {
