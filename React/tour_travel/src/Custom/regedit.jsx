@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-export default function useRegEdit(api) {
+export default function useRegEdit(api,redirect) {
     const [input, setinput] = useState({
         id: "",
         name: "",
@@ -10,6 +11,8 @@ export default function useRegEdit(api) {
         password: "",
         status: ""
     })
+
+    const redir = useNavigate()
 
     const getchange = (e) => {
         setinput({
@@ -25,7 +28,6 @@ export default function useRegEdit(api) {
         e.preventDefault()
 
         try {
-
 
             const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -46,7 +48,9 @@ export default function useRegEdit(api) {
             }
 
             const res = await axios.post(api, input)
+            
             toast.success("User created sucessfully!")
+            redir(redirect)
         } catch (error) {
             console.log("API not found")
             toast.error("API not found")

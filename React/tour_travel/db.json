@@ -27,6 +27,20 @@
       "email": "user2@gmail.com",
       "password": "123456",
       "status": "unblock"
+    },
+    {
+      "id": "aR0-exaJ1Gc",
+      "name": "Nishant",
+      "email": "nishantpatel5754@gmail.com",
+      "password": "123456",
+      "status": "unblock"
+    },
+    {
+      "id": "_W13kp8Hnl8",
+      "name": "Nishant",
+      "email": "nishant@gmail.com",
+      "password": "12345",
+      "status": "unblock"
     }
   ],
   "package": [

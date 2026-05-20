@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import useRegEdit from '../../Custom/regedit'
 
 export default function URegister() {
-  const { input, getchange, getsubmit } = useRegEdit("http://localhost:3000/users")
+  const { input, getchange, getsubmit } = useRegEdit("http://localhost:3000/users","/userlogin")
   return (
     <div>
       <div className="limiter">
