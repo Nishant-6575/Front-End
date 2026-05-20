@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import useLogout from '../../Custom/logout'
 
 function Header() {
+    const { logout } = useLogout("user", "/userlogin")
+
     return (
         <div>
             <div>
@@ -82,14 +85,14 @@ function Header() {
                                             if (!(localStorage.getItem("Uid"))) {
                                                 return (
                                                     <li className="nav-item">
-                                                        <Link className="nav-link fs-5">Log in </Link>
+                                                        <Link className="nav-link fs-5" to="userlogin">Log in </Link>
                                                     </li>
                                                 )
                                             } else {
                                                 return (
                                                     <li className="nav-item d-flex">
                                                         <Link className="nav-link fs-5">helllo {localStorage.getItem("Uname")}</Link>
-                                                        <Link className="nav-link fs-5">Log out </Link>
+                                                        <Link className="nav-link fs-5" onClick={logout}>Log out </Link>
                                                     </li>
                                                 )
                                             }

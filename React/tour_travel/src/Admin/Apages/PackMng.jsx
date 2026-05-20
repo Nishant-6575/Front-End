@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Aheader from '../Acommon/Aheader'
 import UseCrudApi from '../../Custom/crudApi'
+import { Link } from 'react-router-dom'
+
 
 export default function PackMng() {
     const { getapi, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/package",
@@ -20,7 +22,7 @@ export default function PackMng() {
 
     return (
         <div>
-            <Aheader />
+            {/* <Aheader /> */}
             <div className='container text-center'>
                 <h1>Package detail is here</h1>
                 <table className="table">
@@ -38,7 +40,7 @@ export default function PackMng() {
                             getapi && getapi.map((data, key) => {
                                 return (
                                     <tr key={data.id}>
-                                        <th scope="row">{key+1}</th>
+                                        <th scope="row">{key + 1}</th>
                                         <td>{data.name}</td>
                                         <td>{data.location}</td>
                                         <td><img src={data.img} alt="No Image Avilable" style={{ width: "100px" }} /></td>
@@ -49,7 +51,7 @@ export default function PackMng() {
                                         </td>
                                     </tr>
                                 )
-                            })     
+                            })
                         }
                     </tbody>
                 </table>
@@ -69,7 +71,7 @@ export default function PackMng() {
                                                     <div className="desti3im1i">
                                                         <div className="grid clearfix">
                                                             <figure className="effect-jazz mb-0">
-                                                                <a href="detail.html"><img src={view.img} className="w-100" alt="abc"/></a>
+                                                                <a href="detail.html"><img src={view.img} className="w-100" alt="abc" /></a>
                                                             </figure>
                                                         </div>
                                                     </div>
@@ -98,10 +100,10 @@ export default function PackMng() {
                                                     <p>{view.desc}</p>
                                                     <hr />
                                                     <div className="desti3im2i row">
-                                                            <div className="desti3im2ir text-end">
-                                                                <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
-                                                                    ${view.price}</h4>
-                                                            </div>
+                                                        <div className="desti3im2ir text-end">
+                                                            <h4 className="mb-0"><span className="fw-normal font_14 text-muted">From</span><br />
+                                                                ${view.price}</h4>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,11 +160,11 @@ export default function PackMng() {
                                                             <div className="blog_dt1ib3il">
                                                                 <input placeholder="Enter your Images" name='img' value={edit.img} onChange={getedit} className="form-control border-0 bg-light" type="url" />
                                                                 {
-                                                                    edit.img &&(
-                                                                         <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                    edit.img && (
+                                                                        <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
                                                                     )
                                                                 }
-                                                               
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -185,6 +187,9 @@ export default function PackMng() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <Link type="button" className="btn btn-primary" to="/admin/packadd" >Add New Package</Link>
                 </div>
             </div>
         </div>

@@ -69,21 +69,27 @@ export default function useLogin(api, redirect, input) {
                 })
                 return false
             }
+            // console.log(logindata.status)
+            // console.log("login Successfully")
 
-            console.log("login Successfully")
-
-            if(input=="admin"){
+            if (input == "admin") {
                 toast.success("Admin login Successfully")
-            localStorage.setItem("Aid", logindata.id)
-            localStorage.setItem("Aname", logindata.name)
-            }else if (input=="user"){
-                 toast.success("User login Successfully")
-            localStorage.setItem("Uid", logindata.id)
-            localStorage.setItem("Uname", logindata.name)
-            }else{
+                localStorage.setItem("Aid", logindata.id)
+                localStorage.setItem("Aname", logindata.name)
+            } else if (input == "user") {
+                if (logindata.status == "block") {
+                    toast.error("User Blocked")
+                    return false
+                } else {
+                    toast.success("User login Successfully")
+                    localStorage.setItem("Uid", logindata.id)
+                    localStorage.setItem("Uname", logindata.name)
+                }
+
+            } else {
                 return false
             }
-            
+
             redir(redirect)
 
         } catch (error) {
@@ -91,5 +97,6 @@ export default function useLogin(api, redirect, input) {
             toast.error("API not found")
         }
     }
+
     return { getchange, getsubmit, form }
 }

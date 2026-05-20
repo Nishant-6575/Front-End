@@ -29,7 +29,7 @@ export default function PackAdd() {
         days: "",
         price: "",
         img: ""
-    }, "/packmng")
+    },"/admin/packmng")
     // console.log(input)
 
     // const [pack, setpack] = useState({
@@ -74,7 +74,7 @@ export default function PackAdd() {
 
     return (
         <div>
-            <Aheader />
+            {/* <Aheader /> */}
             <div className="col-md-6 mx-auto">
                 <div className="contact_2l">
                     <form action="" onSubmit={getsubmit}>

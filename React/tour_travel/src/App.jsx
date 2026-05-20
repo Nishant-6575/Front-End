@@ -22,6 +22,8 @@ import Alogin from './Admin/Apages/Alogin'
 import Ulogin from './website/pages/Ulogin'
 import URegister from './website/pages/URegister'
 import UserManage from './Admin/Apages/Usermanage'
+import Dash from './Admin/Apages/Dash'
+import AdminHeader from './Admin/Acommon/AdminHeader'
 
 function App() {
   return (
@@ -57,14 +59,27 @@ function App() {
 
           {/* admin */}
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/packagemanage' element={<PackManage />} />
-          <Route path='/packmng' element={<PackMng />} />
-          <Route path='/sermanage' element={<ServiceManage />} />
-          <Route path='/blogmanage' element={<BlogManage />} />
-          <Route path='/pricemanage' element={<PricingManage />} />
-          <Route path='/usermanage' element={<UserManage />} />
+          {/* <Route path='/packagemanage' element={<PackManage />} /> */}
+          {/* <Route path='/packmng' element={<PackMng />} /> */}
+          {/* <Route path='/sermanage' element={<ServiceManage />} /> */}
+          {/* <Route path='/blogmanage' element={<BlogManage />} /> */}
+          {/* <Route path='/pricemanage' element={<PricingManage />} /> */}
+          {/* <Route path='/usermanage' element={<UserManage />} /> */}
+          {/* <Route path='/packadd' element={<PackAdd />} /> */}
 
-          <Route path='/packadd' element={<PackAdd />} />
+          {/* admin panel */}
+          <Route path='/admin' element={<AdminHeader />}>
+            <Route path='dashboard' element={<Dash />} />
+            <Route path='packmng' element={<PackMng />} />
+            <Route path='sermanage' element={<ServiceManage />} />
+            <Route path='blogmanage' element={<BlogManage />} />
+            <Route path='pricemanage' element={<PricingManage />} />
+            <Route path='usermanage' element={<UserManage />} />
+            <Route path='packadd' element={<PackAdd />} />
+          </Route>
+
+
+
 
           <Route path='/adminlogin' element={<Alogin />} />
 

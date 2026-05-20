@@ -66,7 +66,7 @@ export default function PackManage() {
 
     return (
         <div>
-            <Aheader />
+            {/* <Aheader /> */}
             <div className='container text-center'>
                 <h1>Package detail is here</h1>
                 <table className="table">
@@ -84,7 +84,7 @@ export default function PackManage() {
                             api && api.map((data, key) => {
                                 return (
                                     <tr key={key}>
-                                        <th scope="row">{data.id}</th>
+                                        <th scope="row">{key + 1}</th>
                                         <td>{data.name}</td>
                                         <td>{data.location}</td>
                                         <td><img src={data.img} alt="No Image Avilable" style={{ width: "100px" }} /></td>

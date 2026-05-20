@@ -1,23 +1,11 @@
 import React, { useEffect } from 'react'
 import { NavLink, useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import useLogout from '../../Custom/logout'
 
 export default function Aheader() {
 
-    const redir = useNavigate()
-
-    useEffect(() => {
-        if (!localStorage.getItem("Aid")) {
-            redir("/adminlogin")
-        }
-    },)
-
-    const logout = () => {
-        localStorage.removeItem("Aid")
-        localStorage.removeItem("Aname")
-        redir("/adminlogin")
-        toast.success("Logout Sucessfully")
-    }
+    const { logout } = useLogout("admin", "/adminlogin")
 
     return (
         <div>

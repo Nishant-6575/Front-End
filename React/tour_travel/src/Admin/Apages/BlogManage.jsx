@@ -18,7 +18,7 @@ export default function BlogManage() {
 
     return (
         <div>
-            <Aheader />
+            {/* <Aheader /> */}
             <h1 className='text-center'>Blog Manage Detils</h1>
             <div className="container">
                 <table className="table">

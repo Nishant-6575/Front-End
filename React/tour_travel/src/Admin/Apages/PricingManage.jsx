@@ -18,7 +18,7 @@ export default function PricingManage() {
 
     return (
         <div>
-            <Aheader />
+            {/* <Aheader /> */}
             <h1 className='text-center'>Offer Manage Detils</h1>
             <div className="container">
                 <table className="table">

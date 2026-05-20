@@ -22,8 +22,11 @@
       "status": "unblock"
     },
     {
-      "status": "a",
-      "id": "0uZYIu4Cd6M"
+      "id": "2",
+      "name": "user2",
+      "email": "user2@gmail.com",
+      "password": "123456",
+      "status": "unblock"
     }
   ],
   "package": [
@@ -107,6 +110,24 @@
       "days": "5",
       "price": "650",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIrqMQqRvTaF7O5mwrINwBD9JW3miTwRONw&s"
+    },
+    {
+      "id": "Zfz4aNRbczk",
+      "name": "New package4",
+      "location": "Delhi",
+      "desc": "Hello this is package",
+      "days": "5",
+      "price": "120",
+      "img": "https://imgcld.yatra.com/ytimages/image/upload/v1433315432/Domestic%20Holidays/Havelock_2.jpg"
+    },
+    {
+      "id": "knk5Vq68MeM",
+      "name": "New package4",
+      "location": "Mumbai",
+      "desc": "This is package",
+      "days": "7",
+      "price": "708",
+      "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0b/97/98/7a.jpg"
     }
   ],
   "service": [
