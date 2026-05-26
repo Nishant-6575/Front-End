@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background: $secondary-color;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.header {
+  background: $primary-color;
+  padding: 20px 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: $secondary-color;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: $accent-color;
+}
+
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop') center/cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.btn {
+  @include button-style;
+  background: $accent-color;
+  color: $secondary-color;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.bio-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 80px 10%;
+  align-items: center;
+}
+
+.bio-image img {
+  border-radius: $border-radius;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  @include card-style;
+}
+
+.services {
+  padding: 80px 10%;
+  background: $light-bg;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  @include card-style;
+}
+
+.contact-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: $light-bg;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 700px;
+  background: $secondary-color;
+  padding: 40px;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-container h1 {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.btn:focus,
+a:focus {
+  outline: 3px solid yellow;
+}
+
+.footer {
+  background: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .bio-section {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

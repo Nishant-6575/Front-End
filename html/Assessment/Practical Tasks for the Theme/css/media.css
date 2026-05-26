@@ -1,0 +1,19 @@
+/* Media Query Breakthrough Rule for Mobile Device Displays */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  .profile-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
