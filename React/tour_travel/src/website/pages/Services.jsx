@@ -5,7 +5,7 @@ import NavTitle from '../common/NavTitle'
 import useCrudApi from '../../Custom/crudApi'
 
 export default function Services() {
-    const { getapi } = useCrudApi("http://localhost:3000/service")
+    const { getapi } = useCrudApi("service")
     return (
         <div>
             <Header />

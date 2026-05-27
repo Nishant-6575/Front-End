@@ -1,11 +1,13 @@
 import axios from 'axios'
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { fireDb } from '../Firebase/firebase'
 
-export default function useRegEdit(api, redirect) {
+export default function useRegEdit(DbName, redirect) {
+
     const [input, setinput] = useState({
-        id: "",
         name: "",
         email: "",
         password: "",
@@ -18,7 +20,6 @@ export default function useRegEdit(api, redirect) {
     const getchange = (e) => {
         setinput({
             ...input,
-            id: new Date().getTime().toString(),
             status: "unblock",
             [e.target.name]: e.target.value
         })
@@ -47,11 +48,17 @@ export default function useRegEdit(api, redirect) {
                 return false
             }
 
-            const emailres = await axios.get(`${api}?email=${input.email}`)
+            const q = query(
+                collection(fireDb, DbName),
+                where("email", "==", email)
+            )
 
-            if (emailres.data.length == 1) {
-                console.log("email already registered!")
-                toast.error("email already registered!")
+            const emailres = await getDocs(q)
+
+            if (!emailres.empty) {
+
+                toast.error("Email already registered!")
+
                 return false
             }
 
@@ -69,7 +76,7 @@ export default function useRegEdit(api, redirect) {
                 return false
             }
 
-            const res = await axios.post(api, userdata)
+            const res = await addDoc(collection(fireDb, DbName), userdata)
 
             toast.success("User created sucessfully!")
             redir(redirect)

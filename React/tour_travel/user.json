@@ -1,0 +1,100 @@
+{
+    "tours": [
+    {
+      "id": "1",
+      "img": "https://www.swantour.com/blogs/wp-content/uploads/2024/09/Explore-India-Tour.png",
+      "title": "Last Minute Summer Travel Tours",
+      "price": 930,
+      "saleprice": 430,
+      "desc": "Come to the agency to take advantage of our last minute summer trips. You can go on a cruise, in a wonderful tourist village or take an organized tour at an impactful price with 100% quality. Our offers are updated weekly so don't miss out on this fantastic opportunity.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    },
+    {
+      "id": "2",
+      "img": "https://www.edgeoftheworldtour.com/assets/img/home/edge-of-the-world-hero.webp",
+      "title": "- Journey to the Edge of the World",
+      "price": 930,
+      "saleprice": 260,
+      "desc": "Upon arrival, you’ll be greeted by your guide and transferred to your hotel. After settling in, you’ll attend an orientation meeting to go over the itinerary and meet your fellow travelers.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    },
+    {
+      "id": "3",
+      "img": "https://assets.cntraveller.in/photos/64a7ba701e94724098a80205/16:9/w_2000,h_1125,c_limit/Three-Year-Cruise-MV-Lara.jpg",
+      "title": "- Across Continents with a Cruise",
+      "price": 930,
+      "saleprice": 320,
+      "desc": "Upon arrival, you’ll be greeted by your guide and transferred to your hotel. After settling in, you’ll attend an orientation meeting to go over the itinerary and meet your fellow travelers.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    },
+    {
+      "id": "4",
+      "img": "https://images.luxuryescapes.com/fl_progressive,q_auto:eco,e_brightness_hsb:-30,dpr_2.0/bgoadaa2zrlpf5hxk1m",
+      "title": "- Quest for the Lost City of Gold",
+      "price": 930,
+      "saleprice": 470,
+      "desc": "Upon arrival, you’ll be greeted by your guide and transferred to your hotel. After settling in, you’ll attend an orientation meeting to go over the itinerary and meet your fellow travelers.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    },
+    {
+      "id": "5",
+      "img": "https://live.staticflickr.com/65535/54667250694_2de3d72bc2_b.jpg",
+      "title": "- The Great North American Road Trip",
+      "price": 930,
+      "saleprice": 290,
+      "desc": "Upon arrival, you’ll be greeted by your guide and transferred to your hotel. After settling in, you’ll attend an orientation meeting to go over the itinerary and meet your fellow travelers.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    },
+    {
+      "id": "6",
+      "img": "https://t4.ftcdn.net/jpg/01/23/50/55/360_F_123505532_29MEPKkuzjp2gNlxXx9QRLzOz9Wzjwnc.jpg",
+      "title": "- From the Highlands to the Coast",
+      "price": 930,
+      "saleprice": 540,
+      "desc": "Upon arrival, you’ll be greeted by your guide and transferred to your hotel. After settling in, you’ll attend an orientation meeting to go over the itinerary and meet your fellow travelers.",
+      "location": "Europe",
+      "modeoftravel": "Air Travel",
+      "dates": "Summer Months",
+      "tourexpert": {
+        "name": "Ipsum Augue",
+        "photo": "",
+        "experience": "Experienced Travel Planner"
+      }
+    }
+  ]
+}

@@ -4,9 +4,8 @@ import UseCrudApi from '../../Custom/crudApi'
 
 export default function BlogManage() {
 
-    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/blog",
+    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("blog",
         {
-            id: "",
             img: "",
             date: "",
             title: "",
@@ -192,7 +191,7 @@ export default function BlogManage() {
                                                                 <input placeholder="Enter your Images" name='img' value={input.img} onChange={getchange} className="form-control border-0 bg-light" type="url" />
                                                                 {
                                                                     input.img && (
-                                                                <img src={input.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                        <img src={input.img} alt="Image Not Found" style={{ width: 500 }} />
                                                                     )
                                                                 }
                                                             </div>

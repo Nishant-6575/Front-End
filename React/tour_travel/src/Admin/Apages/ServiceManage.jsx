@@ -4,9 +4,8 @@ import UseCrudApi from '../../Custom/crudApi'
 
 export default function ServiceManage() {
 
-    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/service",
+    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("service",
         {
-            id: "",
             name: "",
             desc: "",
             icons: ""

@@ -1,8 +1,11 @@
 import axios from 'axios'
+import { addDoc, collection } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { fireDb } from '../Firebase/firebase'
 
-export default function usePostApi(inp, link, redir) {
+export default function usePostApi(inp, DbName, redir) {
+
     const [input, setinput] = useState(inp)
 
     const redirect = useNavigate()
@@ -10,7 +13,6 @@ export default function usePostApi(inp, link, redir) {
     const getchange = (e) => {
         setinput({
             ...input,
-            id: new Date().getTime().toString(),
             [e.target.name]: e.target.value
         })
     }
@@ -20,9 +22,13 @@ export default function usePostApi(inp, link, redir) {
         e.preventDefault();
 
         try {
-            const res = await axios.post(link, input)
+
+            const res = await addDoc(collection(fireDb, DbName), input)
+
             setinput(inp)
+
             redirect(redir)
+
         } catch (error) {
             console.log("APi data not Found", error)
         }

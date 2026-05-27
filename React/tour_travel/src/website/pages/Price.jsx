@@ -5,9 +5,9 @@ import NavTitle from '../common/NavTitle'
 import useCrudApi from '../../Custom/crudApi'
 
 export default function Price() {
-    const { getapi } = useCrudApi("http://localhost:3000/offers")
+    const { getapi } = useCrudApi("offers")
 
-    const { getapi: tourapi } = useCrudApi("http://localhost:3000/tours")
+    const { getapi: tourapi } = useCrudApi("tours")
 
     return (
         <div>

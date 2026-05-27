@@ -4,22 +4,12 @@ import Footer from '../common/Footer'
 import NavTitle from '../common/NavTitle'
 import axios from 'axios'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
+import useCrudApi from '../../Custom/crudApi'
 
 export default function Package() {
 
-    // get api
-    const [pkg, setpkg] = useState([])
+    const { getapi } = useCrudApi("package")
 
-    useEffect(() => {
-        fetchdata()
-    }, [])
-
-    const fetchdata = async () => {
-        const res = await axios.get("http://localhost:3000/package")
-        setpkg(res.data)
-    }
-
-    // select and export clicked btn id name
     const redirect = useNavigate()
 
     return (
@@ -202,7 +192,7 @@ export default function Package() {
                             <div className="pack_1r px-4">
                                 <div className="desti3 row">
                                     {
-                                        pkg && pkg.map((data, key) => {
+                                        getapi && getapi.map((data, key) => {
                                             return (
                                                 <div className="col-md-6 my-4" key={data.id}>
                                                     <div className="desti3im">

@@ -25,6 +25,8 @@ import UserManage from './Admin/Apages/Usermanage'
 import Dash from './Admin/Apages/Dash'
 import AdminHeader from './Admin/Acommon/AdminHeader'
 import Uedit from './website/pages/Uedit'
+import Fireconnect from './website/pages/Fireconnect'
+import UploadUsers from './website/pages/Upload'
 
 function App() {
   return (
@@ -81,9 +83,10 @@ function App() {
           </Route>
 
 
-
-
           <Route path='/adminlogin' element={<Alogin />} />
+
+          <Route path='/fire' element={<Fireconnect />} />
+          <Route path='/upload' element={<UploadUsers />} />
 
 
         </Routes>

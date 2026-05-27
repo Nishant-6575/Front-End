@@ -1,13 +1,18 @@
 import axios from 'axios'
+import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { fireDb } from '../Firebase/firebase'
 
-export default function useEdituser(api, redirect) {
+export default function useEdituser(DbName, redirect) {
+
     const redir = useNavigate()
 
+    const id = localStorage.getItem("Uid")
+
     useEffect(() => {
-        if (!localStorage.getItem("Uid")) {
+        if (!id) {
             console.log("User not login")
             toast.error("User not login")
             redir("/userlogin")
@@ -16,8 +21,6 @@ export default function useEdituser(api, redirect) {
         getdata()
     }, [])
 
-    const id = localStorage.getItem("Uid")
-
     const [input, setinput] = useState({
         name: "",
         oldpassword: "",
@@ -25,17 +28,36 @@ export default function useEdituser(api, redirect) {
         repassword: ""
     })
 
-    const [userdata, setuserdata] = useState()
+    const [userdata, setuserdata] = useState({})
 
+    // get user data
     const getdata = async () => {
-        const res = await axios.get(`${api}/${id}`)
-        setuserdata(res.data)
-        setinput({
-            ...input,
-            name: res.data.name
-        })
+
+        try {
+
+            const docRef = doc(fireDb, DbName, id)
+
+            const res = await getDoc(docRef)
+
+            if (res.exists()) {
+                const data = {
+                    id: res.id,
+                    ...res.data()
+                }
+                setuserdata(data)
+
+                setinput((prev) => ({
+                    ...prev,
+                    name: data.name
+                }))
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
+    // input change
     const getchange = (e) => {
         setinput({
             ...input,
@@ -43,12 +65,13 @@ export default function useEdituser(api, redirect) {
         })
     }
 
+    // update
     const getsubmit = async (e) => {
         e.preventDefault()
 
         try {
 
-            if (input.name == "") {
+            if (input.name === "") {
                 toast.error("Name should not be empty")
                 return
             }
@@ -74,19 +97,19 @@ export default function useEdituser(api, redirect) {
                 return
             }
 
-            const updateduser = {
-                ...userdata,
+            const updateRef = doc(fireDb, DbName, id)
+
+            const res = await updateDoc(updateRef, {
                 name: input.name,
                 password: input.newpassword
-            }
+            })
 
-            const res = await axios.put(`${api}/${id}`, updateduser)
-
-            localStorage.setItem("Uname", userdata.name)
+            localStorage.setItem("Uname", input.name)
 
             toast.success("Profile updated successfully!")
 
             redir(redirect)
+
         } catch (error) {
             console.log(error)
             toast.error("Something went wrong!")

@@ -6,7 +6,7 @@ import useCrudApi from '../../Custom/crudApi'
 import { data, useLocation, useNavigate } from 'react-router-dom'
 
 export default function BlogsData() {
-    const { getapi } = useCrudApi("http://localhost:3000/blog")
+    const { getapi } = useCrudApi("blog")
 
     const [singledata, setsingledata] = useState(null)
 

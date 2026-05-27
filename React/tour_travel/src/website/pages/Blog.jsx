@@ -6,7 +6,7 @@ import useCrudApi from '../../Custom/crudApi'
 import { useNavigate } from 'react-router-dom'
 
 export default function Blog() {
-    const { getapi } = useCrudApi("http://localhost:3000/blog")
+    const { getapi } = useCrudApi("blog")
 
     // select and export clicked btn id name
     const redirect = useNavigate()

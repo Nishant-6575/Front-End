@@ -7,8 +7,7 @@ import useCrudApi from '../../Custom/crudApi'
 export default function PackAdd() {
 
     const { input, getchange, getsubmit } = useCrudApi(
-        "http://localhost:3000/package", {
-        id: "",
+        "package", {
         name: "",
         location: "",
         desc: "",

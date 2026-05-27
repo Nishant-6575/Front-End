@@ -4,9 +4,8 @@ import UseCrudApi from '../../Custom/crudApi'
 
 export default function PricingManage() {
 
-    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/offers",
+    const { getapi, input, getchange, getsubmit, edit, getid, getedit, UpdateApi, del } = UseCrudApi("offers",
         {
-            id: "",
             title: "",
             desc: "",
             price: "",

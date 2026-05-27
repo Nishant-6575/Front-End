@@ -1,29 +1,40 @@
 import axios from 'axios'
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { fireDb } from '../Firebase/firebase'
 
-export default function useCrudApi(apiurl, inp, redir) {
+export default function useCrudApi(DbName, inp, redir) {
     // read api
     const [getapi, setgetapi] = useState([])
 
     useEffect(() => {
         fetchdata()
-    }, [apiurl])
+    }, [DbName])
 
     const fetchdata = async () => {
-        const res = await axios.get(apiurl)
-        setgetapi(res.data)
+        try {
+            const res = await getDocs(collection(fireDb, DbName))
+
+            const alldata = res.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }))
+            setgetapi(alldata)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     // add api
     const [input, setinput] = useState(inp)
 
     const redirect = useNavigate()
+
     const getchange = (e) => {
         setinput({
             ...input,
-            id: new Date().getTime().toString(),
             [e.target.name]: e.target.value
         })
     }
@@ -32,17 +43,22 @@ export default function useCrudApi(apiurl, inp, redir) {
         e.preventDefault();
 
         const checkEmpty = Object.values(input).some(
-            value => value == ""
+            (value) => value == ""
         )
         if (checkEmpty) {
             toast.error("Please fill all field")
             return false
         }
+
         try {
-            const res = await axios.post(apiurl, input)
+            const res = await addDoc(collection(fireDb, DbName), input)
+
             setinput(inp)
+
             fetchdata()
+
             redirect(redir)
+
             toast.success("Package Added successfully")
         } catch (error) {
             console.log("API Not Found", error)
@@ -54,13 +70,9 @@ export default function useCrudApi(apiurl, inp, redir) {
 
     const [edit, setedit] = useState(inp)
 
-    // const getid = async (id) => {
-    //     const res = await axios.get(`${apiurl}/${id}`)
-    //     setedit(res.data)
-    // }
 
-    const getid = (id) => {
-        setedit(id)
+    const getid = (data) => {
+        setedit(data)
     }
 
     const getedit = (e) => {
@@ -74,7 +86,7 @@ export default function useCrudApi(apiurl, inp, redir) {
         e.preventDefault()
 
         const checkEmpty = Object.values(edit).some(
-            value => value == ""
+            (value) => value == ""
         )
 
         if (checkEmpty) {
@@ -83,8 +95,12 @@ export default function useCrudApi(apiurl, inp, redir) {
         }
 
         try {
-            const res = await axios.put(`${apiurl}/${edit.id}`, edit)
+
+            const updateRef = doc(fireDb, DbName, edit.id)
+            const res = await updateDoc(updateRef, { ...edit })
+
             fetchdata()
+
             toast.success("Data Updated successfully")
 
         } catch (error) {
@@ -97,9 +113,11 @@ export default function useCrudApi(apiurl, inp, redir) {
     // delete api
     const del = async (id) => {
         try {
-            const res = await axios.delete(`${apiurl}/${id}`)
+            const res = await deleteDoc(doc(fireDb, DbName, id))
+
             fetchdata()
             toast.success("Record deleted successfully")
+
         } catch (error) {
             console.log("API not found", error)
             toast.error("API not found")

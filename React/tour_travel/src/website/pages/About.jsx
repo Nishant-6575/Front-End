@@ -5,7 +5,7 @@ import Footer from '../common/Footer'
 import useCrudApi from '../../Custom/crudApi'
 
 export default function About() {
-    const { getapi } = useCrudApi("http://localhost:3000/service")
+    const { getapi } = useCrudApi("service")
     return (
         <div>
             <Header />

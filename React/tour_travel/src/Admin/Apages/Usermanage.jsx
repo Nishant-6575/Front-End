@@ -3,21 +3,25 @@ import Aheader from '../Acommon/Aheader'
 import useApi from '../../Custom/useapi'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { doc, updateDoc } from 'firebase/firestore'
+import { fireDb } from '../../Firebase/firebase'
 
 export default function UserManage() {
 
-    const { api, fetchdata } = useApi("http://localhost:3000/users")
+    const { api, fetchdata } = useApi("users")
 
     const getchange = async (id, status) => {
 
         try {
+            const userRef = doc(fireDb, "users", id)
+
             if (status === "unblock") {
-                const res = await axios.patch(`http://localhost:3000/users/${id}`, { status: "block" })
+                const res = await updateDoc(userRef, { status: "block" })
                 toast.success("User Blocked")
                 fetchdata()
             }
             if (status === "block") {
-                const res = await axios.patch(`http://localhost:3000/users/${id}`, { status: "unblock" })
+                const res = await updateDoc(userRef, { status: "unblock" })
                 toast.success("User Unblocked")
                 fetchdata()
             }

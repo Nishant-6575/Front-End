@@ -9,23 +9,22 @@ import useEditApi from '../../Custom/editapi'
 export default function PackManage() {
 
     // custom hook for get api data
-    const { api, fetchdata } = useApi("http://localhost:3000/package")
+    const { api, fetchdata } = useApi("package")
 
     const [view, setview] = useState()
 
     // custom hook for delete data in api
-    const { del } = useDelApi("http://localhost:3000/package", fetchdata)
+    const { del } = useDelApi("package", fetchdata)
 
     // custom hook for update data in api
     const { getid, edit, UpdateApi, getedit } = useEditApi({
-        id: "",
         name: "",
         location: "",
         desc: "",
         days: "",
         price: "",
         img: "",
-    }, "http://localhost:3000/package", fetchdata)
+    }, "package", fetchdata)
 
     return (
         <div>
@@ -147,34 +146,34 @@ export default function PackManage() {
                                                     <div className="blog_dt1ib3i row">
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Name" value={edit.name} onChange={getedit} name='name' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Name" value={edit.name || ""} onChange={getedit} name='name' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Location" value={edit.location} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Location" value={edit.location || ""} onChange={getedit} name='location' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="blog_dt1ib3i row mt-4">
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Enter your Days" value={edit.days} onChange={getedit} name='days' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Enter your Days" value={edit.days || ""} onChange={getedit} name='days' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                         <div className="col-md-6">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Enter your Price" value={edit.price} onChange={getedit} name='price' className="form-control border-0 bg-light" type="text" />
+                                                                <input placeholder="Enter your Price" value={edit.price || ""} onChange={getedit} name='price' className="form-control border-0 bg-light" type="text" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="blog_dt1ib3i row mt-4">
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
-                                                                <input placeholder="Enter your Images" name='img' value={edit.img} onChange={getedit} className="form-control border-0 bg-light" type="url" />
+                                                                <input placeholder="Enter your Images" name='img' value={edit.img || ""} onChange={getedit} className="form-control border-0 bg-light" type="url" />
                                                                 {
                                                                     edit.img && (
-                                                                        <img src={edit.img} alt="Image Not Found" style={{ width: 500 }} />
+                                                                        <img src={edit.img || ""} alt="Image Not Found" style={{ width: 500 }} />
                                                                     )
                                                                 }
                                                             </div>
@@ -183,7 +182,7 @@ export default function PackManage() {
                                                     <div className="blog_dt1ib3i row mt-4">
                                                         <div className="col-md-12">
                                                             <div className="blog_dt1ib3il">
-                                                                <textarea placeholder="Enter your  desc" value={edit.desc} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" />
+                                                                <textarea placeholder="Enter your  desc" value={edit.desc || ""} onChange={getedit} name='desc' className="form-control form_text border-0 bg-light" />
 
                                                             </div>
                                                         </div>

@@ -6,7 +6,7 @@ import useLogin from '../../Custom/login'
 
 export default function Alogin() {
 
-    const { getchange, getsubmit, form } = useLogin("http://localhost:3000/admin","/admin","admin")
+    const { getchange, getsubmit, form } = useLogin("admin", "/admin/dashboard", "admin")
 
     return (
         <div>

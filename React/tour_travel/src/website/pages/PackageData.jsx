@@ -6,7 +6,7 @@ import useCrudApi from '../../Custom/crudApi'
 import { data, useLocation, useNavigate } from 'react-router-dom'
 
 export default function PackageData() {
-    const { getapi } = useCrudApi("http://localhost:3000/package")
+    const { getapi } = useCrudApi("package")
 
     const [singledata, setsingledata] = useState(null)
 

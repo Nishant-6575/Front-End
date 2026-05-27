@@ -2,7 +2,7 @@ import React from 'react'
 import useEdituser from '../../Custom/edituser'
 
 export default function Uedit() {
-    const { input, getchange, getsubmit } = useEdituser("http://localhost:3000/users", "/")
+    const { input, getchange, getsubmit } = useEdituser("users", "/")
 
     return (
         <div>

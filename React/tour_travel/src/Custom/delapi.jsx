@@ -1,16 +1,27 @@
 import axios from 'axios'
+import { deleteDoc, doc } from 'firebase/firestore'
 import React from 'react'
+import { fireDb } from '../Firebase/firebase'
+import { toast } from 'react-toastify'
 
-export default function useDelApi(url, fetchdata) {
+export default function useDelApi(DbName, fetchdata) {
 
     const del = async (id) => {
 
         try {
-            const res = await axios.delete(`${url}/${id}`)
+
+            await deleteDoc(doc(fireDb, DbName, id))
+
+            toast.success("Deleted Successfully")
+
             fetchdata()
+
         } catch (error) {
-            console.log("Api data not Found", error)
+
+            console.log(error)
+            toast.error("Data not deleted")
         }
     }
+
     return { del }
 }

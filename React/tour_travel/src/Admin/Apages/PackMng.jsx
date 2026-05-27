@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 
 
 export default function PackMng() {
-    const { getapi, edit, getid, getedit, UpdateApi, del } = UseCrudApi("http://localhost:3000/package",
+    const { getapi, edit, getid, getedit, UpdateApi, del } = UseCrudApi("package",
         {
-            id: "",
             name: "",
             location: "",
             desc: "",

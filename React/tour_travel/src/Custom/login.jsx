@@ -1,9 +1,11 @@
 import axios from 'axios'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { fireDb } from '../Firebase/firebase'
 
-export default function useLogin(api, redirect, input) {
+export default function useLogin(DbName, redirect, input) {
 
     const redir = useNavigate()
 
@@ -12,7 +14,9 @@ export default function useLogin(api, redirect, input) {
         password: ""
     })
 
+    //check login status 
     useEffect(() => {
+
         if (input == "admin") {
             if (localStorage.getItem("Aid")) {
                 redir(redirect)
@@ -24,6 +28,7 @@ export default function useLogin(api, redirect, input) {
         }
     }, [])
 
+    // input change
     const getchange = (e) => {
         setform({
             ...form,
@@ -31,6 +36,7 @@ export default function useLogin(api, redirect, input) {
         })
     }
 
+    // login
     const getsubmit = async (e) => {
         e.preventDefault();
 
@@ -43,12 +49,18 @@ export default function useLogin(api, redirect, input) {
                 return false
             }
 
-            const res = await axios.get(`${api}?email=${email}`)
+            const q = query(collection(fireDb, DbName),
+                where("email", "==", email)
+            )
+
+            const res = await getDocs(q)
 
             // Check Email
-            if (res.data.length === 0) {
+            if (res.empty) {
+
                 console.log("Email not found")
                 toast.error("Email is not Registered")
+
                 setform({
                     ...form,
                     password: ""
@@ -56,7 +68,10 @@ export default function useLogin(api, redirect, input) {
                 return false
             }
 
-            const logindata = res.data[0]
+            const logindata = {
+                id: res.docs[0].id,
+                ...res.docs[0].data()
+            }
 
             // Check Password
             if (logindata.password != password) {
@@ -73,7 +88,9 @@ export default function useLogin(api, redirect, input) {
                 toast.success("Admin login Successfully")
                 localStorage.setItem("Aid", logindata.id)
                 localStorage.setItem("Aname", logindata.name)
+
             } else if (input == "user") {
+
                 if (logindata.status == "block") {
                     toast.error("User Blocked")
                     return false
