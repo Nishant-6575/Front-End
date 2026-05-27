@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   FaTachometerAlt,
   FaPlane,
@@ -11,10 +11,25 @@ import {
 } from "react-icons/fa";
 import { NavLink, Link, Outlet } from 'react-router-dom'
 import useLogout from '../../Custom/logout';
+import { useNavigate } from 'react-router-dom'
 
 export default function AdminHeader() {
 
-const { logout } = useLogout("admin", "/adminlogin")
+  const { logout } = useLogout("admin", "/adminlogin")
+
+  const redir = useNavigate()
+
+  useEffect(() => {
+
+    const adminId =
+      localStorage.getItem("Aid")
+
+    if (!adminId) {
+
+      redir("/adminlogin")
+    }
+
+  }, [])
 
   return (
     <div>
@@ -65,21 +80,21 @@ const { logout } = useLogout("admin", "/adminlogin")
                 </li>
 
                 <li className="mb-2">
-                  <NavLink to="/admin/blogmanage"  className="btn btn-light w-100 text-start rounded-3 py-3">
+                  <NavLink to="/admin/blogmanage" className="btn btn-light w-100 text-start rounded-3 py-3">
                     <FaBlog className="me-2" />
                     Blog Manage
                   </NavLink>
                 </li>
 
                 <li className="mb-2">
-                  <NavLink to="/admin/pricemanage"  className="btn btn-light w-100 text-start rounded-3 py-3">
+                  <NavLink to="/admin/pricemanage" className="btn btn-light w-100 text-start rounded-3 py-3">
                     <FaMoneyBill className="me-2" />
                     Pricing
                   </NavLink>
                 </li>
 
                 <li className="mb-2">
-                  <NavLink to="/admin/usermanage"  className="btn btn-light w-100 text-start rounded-3 py-3">
+                  <NavLink to="/admin/usermanage" className="btn btn-light w-100 text-start rounded-3 py-3">
                     <FaUsers className="me-2" />
                     Users
                   </NavLink>
