@@ -1,16 +1,57 @@
-# React + Vite
+# Tour & Travel Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Tour & Travel web application built using React, Vite, Firebase Firestore, and Bootstrap.
 
-Currently, two official plugins are available:
+## 🚀 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 Live Demo: [[user side link](https://react-travel-6575.web.app/)]
+🌐 Live Demo: [[admin side link](https://react-travel-6575.web.app/adminlogin)]
 
-## React Compiler
+---
+Admin Credentials: Email: admin@gmail.com , password: 123456
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+User Credentials: Email: user@gmail.com , password: 12345
 
-## Expanding the ESLint configuration
+# ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## User Features
+- User Registration & Login
+- Edit Profile
+- Change Password
+- View Tour Packages
+- Responsive Design
+
+## Admin Features
+- Admin Login
+- Add Package
+- Edit Package
+- Delete Package
+- Block / Unblock Users
+- Firebase Database Integration
+
+---
+
+# 🛠️ Technologies Used
+
+- React JS
+- Vite
+- Firebase Firestore
+- React Router DOM
+- Bootstrap 5
+- React Toastify
+
+---
+
+# 🔥 Firebase Features
+
+- Firestore Database
+- Firebase Hosting
+
+---
+
+# 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
