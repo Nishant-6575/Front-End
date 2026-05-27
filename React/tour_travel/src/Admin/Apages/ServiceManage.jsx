@@ -17,7 +17,7 @@ export default function ServiceManage() {
 
     return (
         <div>
-            {/* <Aheader /> */}
+
             <h1 className='text-center'>Service Manage Detils</h1>
             <div className="container">
                 <table className="table">

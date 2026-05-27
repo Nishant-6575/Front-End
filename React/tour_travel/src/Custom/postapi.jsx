@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function usePostApi(inp, link, redir) {
     const [input, setinput] = useState(inp)
-    
+
     const redirect = useNavigate()
 
     const getchange = (e) => {

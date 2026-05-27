@@ -14,11 +14,9 @@ export default function PricingManage() {
         },
     )
 
-    // const [view, setview] = useState()
-
     return (
         <div>
-            {/* <Aheader /> */}
+
             <h1 className='text-center'>Offer Manage Detils</h1>
             <div className="container">
                 <table className="table">

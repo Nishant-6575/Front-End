@@ -16,9 +16,9 @@
   "users": [
     {
       "id": "1",
-      "name": "user",
+      "name": "usernish",
       "email": "user@gmail.com",
-      "password": "123456",
+      "password": "12345",
       "status": "unblock"
     },
     {
@@ -40,6 +40,34 @@
       "name": "Nishant",
       "email": "nishant@gmail.com",
       "password": "12345",
+      "status": "unblock"
+    },
+    {
+      "id": "tVrf6n0tfw4",
+      "name": "Nishant Patel",
+      "email": "user3@gmail.com",
+      "password": "",
+      "status": "unblock"
+    },
+    {
+      "id": "H2TCfKWRZM4",
+      "name": "Nishant Patel",
+      "email": "user4@gmail.com",
+      "password": "Nish@1234",
+      "status": "unblock"
+    },
+    {
+      "id": "WX_FOciiVKM",
+      "name": "Nishant Patel",
+      "email": "user5@gmail.com",
+      "password": "1234",
+      "status": "unblock"
+    },
+    {
+      "id": "q-R_9QgRJas",
+      "name": "Nishant Patel",
+      "email": "user6@gmail.com",
+      "password": "Nishant@1234",
       "status": "unblock"
     }
   ],

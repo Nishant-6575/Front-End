@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default function Ulogin() {
 
-     const { getchange, getsubmit, form } = useLogin("http://localhost:3000/users","/","user")
+    const { getchange, getsubmit, form } = useLogin("http://localhost:3000/users", "/", "user")
 
     return (
         <div>

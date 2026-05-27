@@ -24,6 +24,7 @@ import URegister from './website/pages/URegister'
 import UserManage from './Admin/Apages/Usermanage'
 import Dash from './Admin/Apages/Dash'
 import AdminHeader from './Admin/Acommon/AdminHeader'
+import Uedit from './website/pages/Uedit'
 
 function App() {
   return (
@@ -54,11 +55,12 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/userlogin' element={<Ulogin />} />
           <Route path='/userregister' element={<URegister />} />
+          <Route path='/edituser' element={<Uedit />} />
 
           <Route path='*' element={<NotFound />} />
 
           {/* admin */}
-          <Route path='/dashboard' element={<Dashboard />} />
+          {/* <Route path='/dashboard' element={<Dashboard />} /> */}
           {/* <Route path='/packagemanage' element={<PackManage />} /> */}
           {/* <Route path='/packmng' element={<PackMng />} /> */}
           {/* <Route path='/sermanage' element={<ServiceManage />} /> */}

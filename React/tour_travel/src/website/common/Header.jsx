@@ -91,7 +91,7 @@ function Header() {
                                             } else {
                                                 return (
                                                     <li className="nav-item d-flex">
-                                                        <Link className="nav-link fs-5">helllo {localStorage.getItem("Uname")}</Link>
+                                                        <Link className="nav-link fs-5" to="/edituser">helllo {localStorage.getItem("Uname")}</Link>
                                                         <Link className="nav-link fs-5" onClick={logout}>Log out </Link>
                                                     </li>
                                                 )

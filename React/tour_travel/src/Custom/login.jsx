@@ -56,7 +56,6 @@ export default function useLogin(api, redirect, input) {
                 return false
             }
 
-            // console.log(res.data[0].email)
             const logindata = res.data[0]
 
             // Check Password
@@ -69,8 +68,6 @@ export default function useLogin(api, redirect, input) {
                 })
                 return false
             }
-            // console.log(logindata.status)
-            // console.log("login Successfully")
 
             if (input == "admin") {
                 toast.success("Admin login Successfully")

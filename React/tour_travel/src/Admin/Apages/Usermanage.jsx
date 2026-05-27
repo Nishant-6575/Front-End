@@ -21,7 +21,7 @@ export default function UserManage() {
                 toast.success("User Unblocked")
                 fetchdata()
             }
-            // console.log(res.data)
+
         } catch (error) {
             console.log("API not found")
             toast.error("API not found")
@@ -30,7 +30,6 @@ export default function UserManage() {
 
     return (
         <div>
-            {/* <Aheader /> */}
             <h1 className='text-center'>User Manage</h1>
             <div className="container">
                 <table className="table">

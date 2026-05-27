@@ -142,7 +142,7 @@ export default function About() {
                             <div id="carouselExampleCaptions2" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={0} className="active" aria-label="Slide 1" aria-current="true" />
-                                    <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2"/>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to={1} aria-label="Slide 2" />
                                 </div>
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">

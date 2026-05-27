@@ -22,7 +22,6 @@ export default function PackMng() {
 
     return (
         <div>
-            {/* <Aheader /> */}
             <div className='container text-center'>
                 <h1>Package detail is here</h1>
                 <table className="table">

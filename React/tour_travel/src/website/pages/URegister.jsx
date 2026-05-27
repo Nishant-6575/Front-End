@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import useRegEdit from '../../Custom/regedit'
 
 export default function URegister() {
-  const { input, getchange, getsubmit } = useRegEdit("http://localhost:3000/users","/userlogin")
+  const { getchange, getsubmit } = useRegEdit("http://localhost:3000/users", "/userlogin")
   return (
     <div>
       <div className="limiter">
@@ -39,13 +39,13 @@ export default function URegister() {
                   <i className="fa fa-lock" aria-hidden="true" />
                 </span>
               </div>
-              {/* <div className="wrap-input100 validate-input" data-validate="Password is required">
-                <input className="input100" type="password" name="password" placeholder="Repeat Password" onChange={getchange} />
+              <div className="wrap-input100 validate-input" data-validate="Password is required">
+                <input className="input100" type="password" name="repassword" placeholder="Repeat Password" onChange={getchange} />
                 <span className="focus-input100" />
                 <span className="symbol-input100">
                   <i className="fa fa-lock" aria-hidden="true" />
                 </span>
-              </div> */}
+              </div>
               <div className="container-login100-form-btn">
                 <button className="login100-form-btn">
                   Register

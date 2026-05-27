@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-function NavTitle({title}) {
+function NavTitle({ title }) {
     const location = useLocation()
     return (
         <div>
@@ -13,8 +13,8 @@ function NavTitle({title}) {
                                 <h1 className="text-white">{title}</h1>
                                 <h6 className="col_green mb-0 mt-3 fw-normal">
                                     <Link className="text-light" to="/">Home</Link>
-                                    <span className="mx-2 text-white-50">{location.pathname}</span> 
-                                    
+                                    <span className="mx-2 text-white-50">{location.pathname}</span>
+
                                 </h6>
                             </div>
                         </div>

@@ -1,24 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import { useNavigate } from 'react-router-dom'
 import Aheader from '../Acommon/Aheader'
 import usePostApi from '../../Custom/postapi'
 import useCrudApi from '../../Custom/crudApi'
 
 export default function PackAdd() {
-
-    // const redirect = useNavigate()
-
-    // const { input, getchange, getsubmit } = usePostApi({
-    //     id: "",
-    //     name: "",
-    //     location: "",
-    //     desc: "",
-    //     days: "",
-    //     price: "",
-    //     img: ""
-    // }, "http://localhost:3000/package",
-    //     "/packagemanage")
 
     const { input, getchange, getsubmit } = useCrudApi(
         "http://localhost:3000/package", {
@@ -29,52 +15,10 @@ export default function PackAdd() {
         days: "",
         price: "",
         img: ""
-    },"/admin/packmng")
-    // console.log(input)
-
-    // const [pack, setpack] = useState({
-    //     id: "",
-    //     name: "",
-    //     loaction: "",
-    //     desc: "",
-    //     days: "",
-    //     price: "",
-    //     img: ""
-    // })
-
-    // const getchange = (e) => {
-    //     setpack({
-    //         ...pack,
-    //         id: new Date().getTime().toString(),
-    //         [e.target.name]: e.target.value
-    //     })
-    //     console.log(pack)
-    // }
-
-    // const getsubmit = async (e) => {
-
-    //     e.preventDefault();
-
-    //     try {
-    //         const res = await axios.post("http://localhost:3000/package", pack)
-    //         console.log(res.data)
-    //         setpack({
-    //             name: "",
-    //             loaction: "",
-    //             desc: "",
-    //             days: "",
-    //             price: "",
-    //             img: ""
-    //         })
-    //         redirect("/packagemanage")
-    //     } catch (error) {
-    //         console.log("APi data not Found", error)
-    //     }
-    // }
+    }, "/admin/packmng")
 
     return (
         <div>
-            {/* <Aheader /> */}
             <div className="col-md-6 mx-auto">
                 <div className="contact_2l">
                     <form action="" onSubmit={getsubmit}>

@@ -27,46 +27,8 @@ export default function PackManage() {
         img: "",
     }, "http://localhost:3000/package", fetchdata)
 
-
-    // Basic Method to update data in api
-
-    // const getid = async (id) => {
-    //     const res = await axios.get(`http://localhost:3000/package/${id}`)
-    //     setedit(res.data)
-    // }
-
-    // const [edit, setedit] = useState({
-    //     id: "",
-    //     name: "",
-    //     location: "",
-    //     desc: "",
-    //     days: "",
-    //     price: "",
-    //     img: "",
-    // })
-
-    // const getedit = (e) => {
-    //     setedit({
-    //         ...edit,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // const UpdateApi = async (e)=>{
-    //      e.preventDefault();
-    //     try {
-    //         const res= await axios.put(`http://localhost:3000/package/${edit.id}`,edit)
-    //         fetchdata()
-    //         toast.success("Package Updated Successfully")
-    //     } catch (error) {
-    //         console.log("API Not Found",error)
-    //     }
-    // }
-
-
     return (
         <div>
-            {/* <Aheader /> */}
             <div className='container text-center'>
                 <h1>Package detail is here</h1>
                 <table className="table">

@@ -73,7 +73,7 @@ export default function Dash() {
     <div>
       {/* <AdminHeader /> */}
       <div className="container-fluid py-4 px-4 bg-light min-vh-100">
-        
+
         {/* Cards */}
         <div className="row g-4">
           {cards.map((item, index) => (
@@ -250,10 +250,10 @@ export default function Dash() {
                       <td>
                         <span
                           className={`badge ${item.status === "Confirmed"
-                              ? "bg-success"
-                              : item.status === "Pending"
-                                ? "bg-warning text-dark"
-                                : "bg-danger"
+                            ? "bg-success"
+                            : item.status === "Pending"
+                              ? "bg-warning text-dark"
+                              : "bg-danger"
                             }`}
                         >
                           {item.status}

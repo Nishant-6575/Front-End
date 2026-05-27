@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-export default function useRegEdit(api,redirect) {
+export default function useRegEdit(api, redirect) {
     const [input, setinput] = useState({
         id: "",
         name: "",
         email: "",
         password: "",
+        repassword: "",
         status: ""
     })
 
@@ -22,12 +23,21 @@ export default function useRegEdit(api,redirect) {
             [e.target.name]: e.target.value
         })
     }
-    console.log(input)
 
     const getsubmit = async (e) => {
         e.preventDefault()
 
         try {
+
+            const { name, email, password } = input
+
+            const { repassword, ...userdata } = input
+
+            if (name == "" || email == "" || password == "" || repassword == "") {
+                console.log("All fields are required!")
+                toast.error("All fields are required!")
+                return false
+            }
 
             const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -39,16 +49,28 @@ export default function useRegEdit(api,redirect) {
 
             const emailres = await axios.get(`${api}?email=${input.email}`)
 
-            console.log(emailres.data)
-
             if (emailres.data.length == 1) {
                 console.log("email already registered!")
                 toast.error("email already registered!")
                 return false
             }
 
-            const res = await axios.post(api, input)
-            
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (!passwordRegex.test(input.password)) {
+                console.log("Please enter valid password!")
+                toast.error("Please enter valid password!")
+                return false
+            }
+
+            if (password != repassword) {
+                console.log("Password does not match")
+                toast.error("Password does not match")
+                return false
+            }
+
+            const res = await axios.post(api, userdata)
+
             toast.success("User created sucessfully!")
             redir(redirect)
         } catch (error) {
@@ -56,5 +78,5 @@ export default function useRegEdit(api,redirect) {
             toast.error("API not found")
         }
     }
-    return { input, getchange, getsubmit }
+    return { getchange, getsubmit }
 }
