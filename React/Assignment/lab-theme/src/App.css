@@ -1,0 +1,51 @@
+/* Light Theme */
+.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Card */
+.theme-card {
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.light-theme .theme-card {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .theme-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Button */
+.theme-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.light-theme .theme-btn {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.dark-theme .theme-btn {
+  background-color: #ffc107;
+  color: black;
+}
