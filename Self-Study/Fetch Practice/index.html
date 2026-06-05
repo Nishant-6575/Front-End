@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>This is fetch file</h1>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody id="tabledata">
+                <tr>
+                    <th scope="row">25</th>
+                    <td>name</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        console.log("Hello JS");
+
+        fetch("https://fakestoreapi.com/products", {
+            method: "GET"
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                console.log(data)
+
+                const user = data.map((data) => {
+                    console.log(data)
+                    return (
+                        `
+                         <tr>
+                            <th scope="row">${data.id}</th>
+                             <td>${data.title}</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        `
+                    )
+                })
+
+                document.querySelector("tbody").innerHTML += user.join("")
+                // const tbody = document.getElementById("tabledata");
+                // tbody.innerHTML += user.join("");
+
+                // const tbody = document.getElementById("tabledata")
+
+                // tbody.innerHTML += user.join("")
+
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    </script>
+</body>
+
+</html>

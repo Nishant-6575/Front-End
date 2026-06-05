@@ -25,7 +25,7 @@ class CustomerFormHandler {
             case "ln":
                 this.checkempty(inp, err);
                 if (inp.value.length > 0 && inp.value.length <= 3) {
-                    err.innerHTML = "Name length is more that 3 character"
+                    err.innerHTML = "Name must be at least 3 characters"
                     this.errorstyle(err);
                 }
                 break;
@@ -82,10 +82,25 @@ class CustomerFormHandler {
                 break;
             case "chkout":
                 this.checkempty(inp, err);
+                const checkin =
+                    document.getElementById("chkin").value;
+
+                if (inp.value <= checkin && inp.value !== "") {
+                    err.innerHTML =
+                        "Check-out date must be after Check-in date";
+                    this.errorstyle(err);
+                }
+                break;
 
                 break;
             case "purvisit":
                 this.checkempty(inp, err);
+                break;
+            case "state":
+                if (inp.value === "Choose...") {
+                    err.innerHTML = "Please select state";
+                    this.errorstyle(err);
+                }
                 break;
         }
     }
@@ -112,5 +127,73 @@ class CustomerFormHandler {
         }
     }
 
+    saveToLocalStorage(data) {
+        let customers =
+            JSON.parse(localStorage.getItem("customers")) || [];
+
+        customers.push(data);
+
+        localStorage.setItem(
+            "customers",
+            JSON.stringify(customers)
+        );
+    }
+
+    clearForm() {
+        document.querySelector("form").reset();
+    }
+
+    showMessage(msg) {
+        alert(msg);
+    }
+
+
 }
 const validate = new CustomerFormHandler();
+
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    validate.validateform(fn, fnerr);
+    validate.validateform(ln, lnerr);
+    validate.validateform(mail, mailerr);
+    validate.validateform(phone, phoneerr);
+    validate.validateform(add, adderr);
+    validate.validateform(city, cityerr);
+    validate.validateform(state, stateerr);
+    validate.validateform(zip, ziperr);
+    validate.validateform(aadhar, aadharerr);
+    validate.validateform(no_adult, no_adulterr);
+    validate.validateform(chkin, chkinerr);
+    validate.validateform(chkout, chkouterr);
+    validate.validateform(purvisit, purvisiterr);
+
+    // Check if any error exists
+    let errors = document.querySelectorAll("span");
+
+    for (let error of errors) {
+        if (error.innerHTML !== "") {
+            return; // stop submission
+        }
+    }
+
+    const customer = {
+        firstName: fn.value,
+        lastName: ln.value,
+        email: mail.value,
+        phone: phone.value,
+        address: add.value,
+        city: city.value,
+        state: state.value,
+        zip: zip.value,
+        aadhar: aadhar.value,
+        adults: no_adult.value,
+        checkin: chkin.value,
+        checkout: chkout.value,
+        purpose: purvisit.value
+    };
+
+    validate.saveToLocalStorage(customer);
+    validate.clearForm();
+    validate.showMessage("Data Saved Successfully");
+});
